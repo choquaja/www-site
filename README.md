@@ -3,88 +3,75 @@
 
 ###Index
 
-1. Struchture of the site
-2. Static pages
-3. WordPress Installation to a Subdirectory
-4. Resources
+1. General 
+2. Resources
   1. Plugins
   2. Theme
   3. Duplicator Backup
   4. DB Backup
   5. Wp-Config
 
-#WordPress Installation to a Subdirectory
+#General 
+The current theme works for Wordpress 4.5
 
-Install WordPress in the subdirectory by using [wp-cli link](http://wp-cli.org/).
-I will assume that you set the virtual host being carried out as example.com using the wp-setup command.
+For 3blades v 2.0.1 (04/21/2016) all statis pages have been integrated into the main theme, all we need is to have the basic wordpress installation running on the root folder.
 
-If the configuration of the virtual host does not end /etc/nginx/conf.d/default.conf , /etc/nginx/conf.d/default.backend.conf please perform the virtual host settings in Nginx by copying the following.
 
-There is a need to rewrite the server_name , root in the configuration file that you copied. And delete the default statement.
-The configuration file created after sudo service nginx reload so you will need to reflect the changes to the configuration file, please be careful.
+#Plugins
+The following plugins are installed on the v 2.0.1
+* Duplicator [download link](https://wordpress.org/plugins/duplicator/)
+* YOAST SEO [download link](https://wordpress.org/plugins/wordpress-seo/)
+* Email Marketing by Drip [download link](https://wordpress.org/plugins/email-marketing/)
+* Disqus [download link](https://wordpress.org/plugins/disqus-comment-system/)
+* W3 Total Cache [download link](https://wordpress.org/plugins/w3-total-cache/) 
 
-The configuration file created after sudo service nginx reload need to reflect the changes (to the configuration file) so please be careful.
+#Theme
+Theme files need to be installed on this route: /var/www/html/wp-content/themes/3blades
+current theme files are on this repo on wp-content/themes/3blades folder
 
-#Download WordPress Core Source
+Current version: 2.0.1
+Date: 04/21/2016
 
-First, download the WordPress core source by creating a directory of the installation destination.
+#Duplicator Backup
 
-/var/www/vhoste/example.com/test installation location
+A full back up of the site is done every week and exported into two files:
+* Archive
+* Installer
+This two files include a full copy of the entire site and its database, in order to reinstall the site or clone it into a new server, there is no need to have a wordpress cms installed. The two files will installed the lastest working version.
+Current files are on this repo on Duplicator folder.
 
-    $ sudo mkdir -p /var/www/vhoste/example.com/test
-    $ cd /var/www/vhoste/example.com/test
-    $ sudo wp --allow-root core download
-    $ sudo chown -R nginx:nginx /var/www/vhoste/example.com/test
+Steps:
+* Create a DB and User for the new installation.
+* Upload Archive and Installer files into an empty folder.
+* Execute Installer.php
+* Fill the DB, DB-Username and password.
+* The site will be restored.
 
-#Create Database
+#Site configuration wp-config
 
-Create a user and database (for database access).
-The MySQL username is wp_user, password wp_password, and the database name that you created will be the db_example_com_test.
+In order to get the site running, wp-config.php on the root directory need to have the following set up:
 
-If it does not set a password for the root account of MySQL, you can create a database by running the following command.
-This is because it is disabled by default to connect to port 3306 from the outside. Please set a password to the root account).
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'data-base-name');
 
-    $ mysql -u root
-    mysql> create database db_example_com_test default character set utf8 collate utf8_general_ci;
-    mysql> grant all privileges on db_example_com_test.* to wp_user@localhost identified by 'wp_password';
-    mysql> exit
-    $
+/** MySQL database username */
+define('DB_USER', 'root');
 
-#Creating a WordPress config file
+/** MySQL database password */
+define('DB_PASSWORD', 'db-password');
 
-Create a config file of WordPress.The MySQL username is wp_user, password wp_password, and the database name that you created will be the db_example_com_test.
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
 
-    $ sudo wp --allow-root core config --dbname=db_example_com_test --dbuser=wp_user --dbpass=wp_password
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8mb4');
 
-#Modification of the Nginx Configuration File
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
 
-Lastly, I will modify the configuration file of the back-end side of the Nginx.
-As a subdirectory /test is as follows: If you installed the location /test/ {}please add.
 
-    server {
-        listen      unix:/var/run/nginx-backend.sock;
-        server_name example.com;
-        root        /var/www/vhosts/example.com;
-        index       index.php index.html index.htm;
 
-    access_log  /var/log/nginx/example.com.backend.access.log backend;
 
-    keepalive_timeout 25;
-    port_in_redirect  off;
 
-    gzip              off;
-    gzip_vary         off;
 
-    location /test/ {
-        try_files $uri $uri/ /test/index.php?$args;
-    }
-
-    include /etc/nginx/wp-singlesite;
-    #include /etc/nginx/wp-multisite-subdir;
-    }
-
-Please reflect the changes in the configuration file with sudo service nginx reload . After that was carried out, it will modify the configuration file of nginx.
-
-WordPress installation to a subdirectory is completed.
-
-It may be performed to create the administrator user with access from the browser, and the command wp core install --url=<url> --title=<site-title> --admin_user=<username> --admin_password=<password> --admin_email=<email> may be installed in the command line.
