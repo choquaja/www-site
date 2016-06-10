@@ -103,7 +103,7 @@ mixpanel.init("9d2c05e8495d88b2836b61fe3938dbca");
 		
 		<div class="container">
 			<div id="about">
-				<h2>3Blades offers a cloud based development enviroment <br> to build and share data science projects.</h2>
+				<h2>3Blades offers a cloud based development environment <br> to build and share data science projects.</h2>
 				<span id="about-text">Synchronize your files with best in class cloud storage services or use RESTful API to synch objects with on premise storage solutions.</span>
 				<div id="features">
 					<img id="features-img" src="<?php echo get_stylesheet_directory_uri(); ?>/img/3blades-features.png" alt="3Blades Features">
