@@ -1,0 +1,19 @@
+@import "styles/config";
+
+.header-main{
+  &-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: $gutter;
+    @include global-wrapper;
+    height:$header-height;
+  }
+  &.dark{
+    background:$color-grey-base;
+    color: $color-white;
+  }
+  &.light{
+    background:transparent;
+    color: $color-grey-base;
+  }
+}

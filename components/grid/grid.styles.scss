@@ -1,0 +1,114 @@
+@import "styles/config";
+
+.grid {
+  width: 100%;
+
+  &.layout {
+
+    &-align {
+
+      &-center {
+        @at-root .grid {
+          &-wrapper {
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+  }
+
+  &-item {
+    //flex: 1;
+    margin-bottom: $unit*2;
+
+    @include media('<=tablet'){
+      width: 50% !important;
+      max-width:50% !important;
+    }
+    @include media('<=480px'){
+      width: 100% !important;
+      max-width:100% !important;
+    }
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &-graphic {
+      width: 90px;
+    }
+    &-label {
+      padding-top: $unit;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+.small-logos {
+  .grid-item-avatar {
+    min-width: 120px;
+    max-width: 140px;
+  }
+  img {
+    //max-width:180px;
+  }
+}
+
+img {
+  //max-width:100% !important;
+}
+
+.people {
+  margin-top: $gutter*4;
+}
+
+.person {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:$gutter*2;
+  }
+  &-avatar {
+    //display: flex;
+    $size: 120px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background: white;
+    margin-bottom: $gutter;
+    box-shadow: $drop-shadow-shallow;
+  }
+  &-details {
+    &-name {
+      font-size: 2rem;
+      font-family: $font-headings;
+      color: $color-graphite-base;
+
+      font-weight: 100;
+    }
+    &-title{
+      padding-top:$unit;
+      padding-bottom:$unit;
+      color: rgba($color-graphite-base, 0.75);
+
+    }
+    &-bio{
+      max-width:80%;
+      @include center-content;
+      font-weight:300;
+      opacity:0.75;
+    }
+  }
+}

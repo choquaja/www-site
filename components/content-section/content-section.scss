@@ -1,0 +1,307 @@
+@import "styles/config";
+
+.content-section {
+  width: 100%;
+  will-change: opacity;
+  background: white;
+
+  &:nth-of-type(even){
+
+  }
+  &.no-padding-mobile {
+    @include tablet {
+      .content-section-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .content-section-header {
+        padding-left: $gutter*2;
+        padding-right: $gutter*2;
+        min-width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  }
+  //.content-section-wrapper
+  &-wrapper {
+    opacity: 0;
+    padding-top: $gutter*2;
+    padding-bottom: $gutter*2;
+    @include global-wrapper;
+    flex-wrap: wrap;
+    display: flex;
+    @include desktop {
+      padding-top: $gutter*4.5;
+      padding-bottom: $gutter*4.5;
+    }
+  }
+  //.content-section-header
+  &-header {
+    margin-bottom: $gutter*1.5;
+    @include handheld {
+      text-align: center;
+      @include center-content;
+      padding-right: $gutter;
+      padding-left: $gutter;
+    }
+  }
+  //.content-section-title
+  &-title {
+    &.wiggle-after {
+      margin-bottom: $gutter*1.5;
+    }
+    &-wrapper {
+      padding-bottom: $unit;
+      font-size: 2rem;
+      font-family: $font-headings;
+      font-weight: 100;
+      @include handheld {
+        text-align: left;
+      }
+    }
+  }
+  //.content-section-body
+  &-body {
+    width: 100%;
+    &-wrapper {
+      padding-top: $unit;
+    }
+    p, ul {
+      margin: 0;
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 200;
+      @include desktop {
+        max-width: 85%;
+      }
+      @include handheld {
+        text-align: left;
+      }
+    }
+    ul {
+      margin: $unit*2 0;
+      padding-top: $unit*2;
+      padding-bottom: $unit*2;
+      border-radius: 8px;
+      padding-right: $unit*2;
+
+      li + li {
+        padding-top: $unit;
+      }
+    }
+    @include handheld {
+      text-align: center;
+    }
+  }
+  //.content-section-graphic
+  &-graphic {
+    //padding: $gutter;
+    margin:$gutter;
+    @include center-content;
+    &-label {
+      @include center-content;
+      text-align: center;
+      padding-top: $unit;
+    }
+    &-image {
+      background: white;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      box-shadow: $drop-shadow-l-light;
+    }
+    //.content-section-graphic + .content-section-graphic
+    & + & {
+      margin-top: $gutter;
+    }
+    @include tablet {
+      padding: 0;
+    }
+  }
+  // .content-section
+  // alignments
+  &.center {
+    .content-section-body > p {
+      max-width: 680px;
+      @include center-content;
+    }
+    &.white {
+      [class*="title-"] {
+        color: white;
+      }
+    }
+  }
+  p {
+    font-size: 22px;
+    line-height: 36px;
+  }
+
+  p + p {
+    margin-top: $gutter;
+  }
+
+  // -- panes
+  //.content-section-pane
+  &-pane {
+    display: flex;
+    width: 100%;
+    //.content-section-pane-wrapper
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    //.content-section-pane-half
+    &-half {
+      width: 50%;
+      @include media("<=tablet") {
+        width: 100%;
+      }
+
+      @at-root & .content-section-pane-wrapper {
+        padding: $unit;
+      }
+    }
+    //.content-section-pane-flex
+    &-flex {
+      flex: 1;
+    }
+    //.content-section-pane-text
+    &-text {
+      @include tablet {
+        width: 65%;
+      }
+      @include handheld {
+        width: 100%;
+      }
+    }
+    //.content-section-pane-graphic
+    &-graphic {
+      @include tablet {
+        width: 35%;
+      }
+      @include handheld {
+        width: 100%;
+      }
+    }
+    //.content-section-pane-align-*
+    &-align {
+      &-left {
+        @at-root & .content-section-pane-wrapper {
+        }
+      }
+      &-center {
+        @at-root & .wiggle-after {
+          &::after {
+            left: calc(50% - 30.5px);
+          }
+        }
+        @at-root & .content-section-pane-wrapper {
+          justify-content: center !important;
+          align-items: center !important;
+          text-align: center !important;
+
+        }
+        .content-section-title {
+          max-width: 700px !important;
+          @include handheld {
+            &-wrapper {
+              text-align: center !important;
+            }
+          }
+        }
+        p {
+          margin-left: auto !important;
+          margin-right: auto !important;
+          max-width: 600px !important;
+          @include handheld {
+            text-align: center;
+          }
+        }
+      }
+      &-center-vertically {
+        @at-root & .content-section-pane-wrapper {
+          justify-content: center;
+        }
+      }
+      &-end {
+        @at-root & .content-section-pane-wrapper {
+          .content-section-body {
+            align-items: flex-end;
+            justify-content: flex-end;
+            display: flex;
+          }
+        }
+      }
+      &-right {
+        @at-root & .content-section-pane-wrapper {
+          text-align: right;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+  &-style {
+    &--graphite {
+      background: $color-graphite-base;
+      .content-section-title {
+        color: white;
+      }
+      .content-section-body {
+        color: rgba(white, 0.5);
+      }
+    }
+    &--dark-blue-gradient {
+      background: chromatic-gradient(135deg, #0072A7, #47206B);
+      position: relative;
+      z-index: 8;
+      .content-section-title {
+        color: white;
+      }
+      .content-section-body {
+        color: #92BBE8;
+      }
+    }
+    &--gold-gradient {
+      background: chromatic-gradient(135deg, #F2994A, #F2C94C);
+      @at-root & .wiggle-after {
+        &::after {
+          background: url("/static/images/wiggle-cyan.svg");
+
+        }
+      }
+      .content-section-title {
+        color: white;
+      }
+      .content-section-body {
+        color: white;
+      }
+    }
+  }
+}
+
+.card-simple {
+  position: relative;
+  margin-top: $unit*2;
+  min-width: 480px;
+  &-wrapper {
+    padding: $unit*2;
+
+  }
+  &-body {
+    text-align: center;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    border-radius: 40px;
+    box-shadow: 0 8px 15px rgba(80, 103, 132, .15);
+  }
+}

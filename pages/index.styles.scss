@@ -1,0 +1,109 @@
+@import "styles/config";
+
+.hero {
+  @include wiggle-dark(180px, 0.1);
+
+  & &-wrapper {
+    padding: 20px;
+    display: flex;
+    flex: 1;
+    @include global-wrapper;
+    justify-content: space-between;
+
+    @include media("<=tablet") {
+      flex-direction: column;
+    }
+
+  }
+  flex: 1;
+  display: flex;
+  min-height: 600px;
+  align-self: stretch;
+
+  &-section {
+    flex: 1;
+    display: flex;
+
+    @include media(">tablet") {
+      padding: 0 $gutter;
+    }
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
+    &.half {
+      max-width: 50%;
+      @include media("<=tablet") {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    &-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .newsletter {
+    margin-top: $gutter*4;
+    @include media('<=tablet'){
+      margin-bottom:$gutter*2;
+    }
+    .buttons{
+      //margin-left:$unit;
+    }
+    .subtitle {
+      padding-bottom: $unit;
+      font-weight:300;
+      color: $color-grey-base;
+      opacity:0.35;
+    }
+  }
+}
+
+.hero-translate {
+  transform: translateY(-80px);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  &-wrapper {
+    flex: 1;
+    display: flex;
+    position: relative;
+
+  }
+  &-button {
+    background: $color-orange-light;
+    &-wrapper {
+      padding: $unit;
+      color: white;
+    }
+  }
+
+  .form-message{
+    position: absolute;
+    top:100%;
+    padding-top:$unit;
+    @include trans;
+    font-size:0.85rem;
+    color: rgba($color-grey-base, 0.5)
+  }
+
+  input {
+    flex: 1;
+    border: $border;
+    padding: $unit;
+    color: $color-grey-base;
+  }
+}
+

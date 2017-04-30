@@ -1,0 +1,187 @@
+@import "variables";
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-and-slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translate3d(0, $gutter*4, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-and-slide-in-from-bottom-sm {
+  from {
+    opacity: 0;
+    transform: translate3d(0, $unit, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-and-slide-in-from-top {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -$gutter*4, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-and-slide-in-from-top-sm {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -$unit, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes staggermenu {
+  from {
+    transform: translate3d(0, 5px, 0) skew(14deg, 7deg);
+    opacity: 0
+  }
+
+  to {
+    transform: translate3d(0, 0, 0) skew(0, 0);
+    opacity: 1
+  }
+}
+
+$timing-animation: $timing*2.5;
+
+.animation {
+  &-fadein {
+    opacity: 0;
+    animation: fadein $timing-animation forwards $easing;
+  }
+  &-fadeout {
+    opacity: 1;
+    animation: fadeout $timing-animation forwards $easing;
+  }
+  &-fade-and-slide-in-from-bottom {
+    opacity: 0;
+    animation: fade-and-slide-in-from-bottom $timing-animation forwards $easing;
+  }
+  &-fade-and-slide-in-from-bottom-sm {
+    opacity: 0;
+    animation: fade-and-slide-in-from-bottom-sm $timing-animation forwards $easing;
+  }
+  &-fade-and-slide-in-from-bottom-sm-fast {
+    opacity: 0;
+    animation: fade-and-slide-in-from-bottom-sm $timing-animation/2 forwards $easing;
+  }
+  &-fade-and-slide-in-from-top {
+    opacity: 0;
+    animation: fade-and-slide-in-from-top $timing-animation forwards $easing;
+  }
+  &-fade-and-slide-in-from-top-sm {
+    opacity: 0;
+    animation: fade-and-slide-in-from-top-sm $timing-animation forwards $easing;
+  }
+
+  &-stagger-menu {
+    opacity: 0;
+    animation: staggermenu $timing-animation forwards $easing;
+  }
+  &-delay {
+    &-xl {
+      animation-delay: 2s;
+    }
+    &-l {
+      animation-delay: 1s;
+    }
+    &-med {
+      animation-delay: 0.5s;
+    }
+    &-sm {
+      animation-delay: 0.25s;
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Fadein
+//----------------------------------------------------------------------------------------------------------------------
+
+@mixin animationFadein-xl {
+  @extend .animation-fadein;
+  @extend .animation-delay-xl;
+}
+
+@mixin animationFadein-l {
+  @extend .animation-fadein;
+  @extend .animation-delay-l;
+}
+
+@mixin animationFadein-med {
+  @extend .animation-fadein;
+  @extend .animation-delay-med;
+}
+
+@mixin animationFadein-sm {
+  @extend .animation-fadein;
+  @extend .animation-delay-sm;
+}
+
+@mixin animationFadein {
+  @extend .animation-fadein;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Fade and slide in from bottom
+//----------------------------------------------------------------------------------------------------------------------
+
+@mixin animationFadeAndSlideInFromBottom {
+  @extend .animation-fade-and-slide-in-from-bottom;
+}
+
+@mixin animationFadeAndSlideInFromBottom-sm {
+  @extend .animation-fade-and-slide-in-from-bottom-sm;
+}
+
+@mixin animationFadeAndSlideInFromBottom-sm-fast {
+  @extend .animation-fade-and-slide-in-from-bottom-sm-fast;
+}
+
+@mixin animationFadeAndSlideInFromTop {
+  @extend .animation-fade-and-slide-in-from-top;
+}
+
+@mixin animationFadeAndSlideInFromTop-sm {
+  @extend .animation-fade-and-slide-in-from-top-sm;
+}
+
+@mixin animation-stagger-menu {
+  @extend .animation-stagger-menu;
+}

@@ -1,0 +1,62 @@
+@import "styles/config";
+
+
+.navigation-main {
+  flex: 1;
+  display: flex;
+
+  @include media('<=tablet'){
+    display: none;
+  }
+
+  &-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-section {
+    display: flex;
+    flex: 1;
+
+    nav {
+      display: flex;
+      flex: 1;
+      align-items: flex-end;
+
+
+      a {
+        &:not(.button) {
+          display: flex;
+          align-items: center;
+          padding: $unit;
+          padding-top: $gutter;
+          color: currentColor;
+          text-decoration: none;
+          font-family: $font-headings;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+          font-size: 0.85rem;
+          opacity: 0.5;
+          font-weight: 300;
+          &:hover {
+            opacity: 1;
+          }
+          &:active {
+            //@mixin active-state-transform;
+          }
+        }
+      }
+    }
+    &:first-of-type {
+      justify-content: flex-start;
+    }
+    &:last-of-type {
+      justify-content: flex-end;
+
+      nav {
+        justify-content: flex-end;
+      }
+    }
+
+  }
+}

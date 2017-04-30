@@ -1,0 +1,36 @@
+@import "styles/config";
+
+.footer-main {
+  background: whitesmoke;
+  border-top:$border;
+  color: rgba($color-graphite-base, 0.5);
+  &-wrapper {
+    @include global-wrapper;
+    display: flex;
+
+    @include media('<=tablet'){
+      flex-direction: column;
+      .footer-main-section-wrapper{
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+    }
+  }
+
+  &-section{
+    flex: 1;
+
+    &-wrapper{
+      display: flex;
+      padding:$unit*2 0;
+    }
+
+
+    &:nth-of-type(2){
+      .footer-main-section-wrapper{
+        justify-content: flex-end;
+      }
+    }
+  }
+}
