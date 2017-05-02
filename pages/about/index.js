@@ -23,7 +23,13 @@ const newsletterButton = [
     }
 ];
 
-
+const team = [
+  { name: 'Greg Werner', headshot: 'gregwerner.jpg', title: 'CEO', description: ''},
+  { name: 'Abhi Kethireddy', headshot: 'abhikethireddy.jpg', title: 'Software Engineer', description: 'Optimistic and Imaginative'},
+  { name: 'John Griebel', headshot: 'johngriebel.jpg', title: 'Senior Backend Engineer', description: 'Too busy fixing things to think of a bio.'},
+  { name: 'Eli Philpotts', headshot: 'eliphilpotts.png', title: 'Senior Data Scientist', description: ''},
+  { name: 'Ray Gesualdo', headshot: 'raygesualdo.jpg', title: 'Senior Software Engineer', description: ''},
+]
 export default class About extends React.Component {
     render() {
         return (
@@ -33,13 +39,10 @@ export default class About extends React.Component {
                     <ContentPane full center center-vertically>
 
                         <Title>
-                            A short but snappy line about 3blades as a company and what it stands for.
+                            3Blades strives to democratize data science regardless of company or team size. We firmly believe that more collaboration leads to more innovation.
                         </Title>
                         <Body>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aspernatur assumenda
-                            consectetur dignissimos eaque eligendi fugit id magnam modi, nesciunt pariatur quaerat, quod
-                            repellendus tempora tenetur unde, ut voluptatum!
                         </p>
                         </Body>
                     </ContentPane>
@@ -51,162 +54,32 @@ export default class About extends React.Component {
                         </Title>
                         <Body>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab beatae deserunt, dignissimos
-                            dolor earum hic laboriosam molestias omnis provident? Ab doloribus ea inventore officia
-                            placeat quae quidem recusandae similique.
+                            The 3Blades team is passionate about quality open source software. Based out of Atlanta, GA, 3Blades engineers come from a variety of backgrounds and geographies.
                         </p>
 
                         <Grid columns="3" className="people">
+                          {team.map(person => (
                             <GridItem>
-                                <div className="person">
-                                    <div className="person-wrapper">
-                                        <div className="person-avatar">
-                                            <div className="person-avatar-wrapper">
-
-                                            </div>
-                                        </div>
-                                        <div className="person-details">
-                                            <div className="person-details-name">
-                                                Greg Werner
-                                            </div>
-                                            <div className="person-details-title">
-                                                CEO
-                                            </div>
-                                            <div className="person-details-bio">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-
+                              <div className="person">
+                                <div className="person-wrapper">
+                                  <div className="person-avatar">
+                                    <img src={`/static/images/headshots/${person.headshot}`} style={{width: '100%'}} />
+                                  </div>
+                                  <div className="person-details">
+                                    <div className="person-details-name">
+                                      {person.name}
                                     </div>
-
-                                </div>
-                            </GridItem>
-
-                            <GridItem>
-                                <div className="person">
-                                    <div className="person-wrapper">
-                                        <div className="person-avatar">
-                                            <div className="person-avatar-wrapper">
-
-                                            </div>
-                                        </div>
-                                        <div className="person-details">
-                                            <div className="person-details-name">
-                                                Greg Werner
-                                            </div>
-                                            <div className="person-details-title">
-                                                CEO
-                                            </div>
-                                            <div className="person-details-bio">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-
+                                    <div className="person-details-title">
+                                      {person.title}
                                     </div>
-
+                                    {/* <div className="person-details-bio">
+                                      {person.description}
+                                    </div> */}
+                                  </div>
                                 </div>
+                              </div>
                             </GridItem>
-
-                            <GridItem>
-                                <div className="person">
-                                    <div className="person-wrapper">
-                                        <div className="person-avatar">
-                                            <div className="person-avatar-wrapper">
-
-                                            </div>
-                                        </div>
-                                        <div className="person-details">
-                                            <div className="person-details-name">
-                                                Greg Werner
-                                            </div>
-                                            <div className="person-details-title">
-                                                CEO
-                                            </div>
-                                            <div className="person-details-bio">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </GridItem>
-
-                            <GridItem>
-                                <div className="person">
-                                    <div className="person-wrapper">
-                                        <div className="person-avatar">
-                                            <div className="person-avatar-wrapper">
-
-                                            </div>
-                                        </div>
-                                        <div className="person-details">
-                                            <div className="person-details-name">
-                                                Greg Werner
-                                            </div>
-                                            <div className="person-details-title">
-                                                CEO
-                                            </div>
-                                            <div className="person-details-bio">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </GridItem>
-
-                            <GridItem>
-                                <div className="person">
-                                    <div className="person-wrapper">
-                                        <div className="person-avatar">
-                                            <div className="person-avatar-wrapper">
-
-                                            </div>
-                                        </div>
-                                        <div className="person-details">
-                                            <div className="person-details-name">
-                                                Greg Werner
-                                            </div>
-                                            <div className="person-details-title">
-                                                CEO
-                                            </div>
-                                            <div className="person-details-bio">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </GridItem>
-
-                            <GridItem>
-                                <div className="person">
-                                    <div className="person-wrapper">
-                                        <div className="person-avatar">
-                                            <div className="person-avatar-wrapper">
-
-                                            </div>
-                                        </div>
-                                        <div className="person-details">
-                                            <div className="person-details-name">
-                                                Greg Werner
-                                            </div>
-                                            <div className="person-details-title">
-                                                CEO
-                                            </div>
-                                            <div className="person-details-bio">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </GridItem>
-
+                          ))}
                         </Grid>
                         </Body>
                     </ContentPane>

@@ -5,11 +5,11 @@ import Buttons from '../buttons/buttons';
 
 const navButtons = [
     {
-        label: 'Sign In',
+        label: 'Request Beta Access',
         title: '',
         icon: null,
         target: '_blank',
-        link: 'https://go.3blades.io/auth/login?next=%2F',
+        link: 'https://www.getdrip.com/forms/1759481/submissions/new',
         button: {
             classes: 'button button-primary'
         }
@@ -26,18 +26,10 @@ export default () => {
                 </div>
                 <div className="navigation-main-section">
                     <nav>
-                        {/*<Link href="/about">*/}
-
-
-                        {/* <Link href="/showcase">
-                            <a>Showcase</a>
-                        </Link> */}
-                        <Link href="/about" prefetch>
-                            <a>About</a>
-                        </Link>
-                        <a href="https://blog.3blades.io">Blog</a>
-                        <a href="https://support.3blades.io/hc/en-us" target="_blank">Support</a>
-
+                        {/* <Link href="/showcase">Showcase</Link> */}
+                        <Link href="/about" prefetch>About</Link>
+                        <a href="https://blog.3blades.io" target="_blank">Blog</a>
+                        <a href="https://docs.3blades.io/en/latest/" target="_blank">Docs</a>
                         <Buttons items={navButtons}/>
                     </nav>
                 </div>

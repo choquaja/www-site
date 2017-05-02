@@ -217,7 +217,7 @@ export default class Index extends React.Component {
                     </ContentPane>
                     <ContentPane half center-vertically>
                         <Body>
-                        <Graphic image="https://3bladesio-eegzahisvr.now.sh/static/images/hero-graphic.png"/>
+                        <Graphic image="/static/images/hero-graphic.png"/>
                         </Body>
                     </ContentPane>
                 </ContentSection>
@@ -226,7 +226,7 @@ export default class Index extends React.Component {
                     <ContentPane half center-vertically>
 
                         <Body>
-                        <Graphic image="https://3bladesio-eegzahisvr.now.sh/static/images/hero-graphic.png"/>
+                        <Graphic image="/static/images/hero-graphic.png"/>
                         </Body>
                     </ContentPane>
                     <ContentPane half center-vertically>
@@ -262,7 +262,7 @@ export default class Index extends React.Component {
                     </ContentPane>
                     <ContentPane half center-vertically>
                         <Body>
-                        <Graphic image="https://3bladesio-eegzahisvr.now.sh/static/images/hero-graphic.png"/>
+                        <Graphic image="/static/images/hero-graphic.png"/>
                         </Body>
                     </ContentPane>
                 </ContentSection>
@@ -300,7 +300,7 @@ export default class Index extends React.Component {
                     </ContentPane>
                     <ContentPane half center-vertically>
                         <Body>
-                        <Graphic image="https://3bladesio-eegzahisvr.now.sh/static/images/hero-graphic.png"/>
+                        <Graphic image="/static/images/hero-graphic.png"/>
                         </Body>
                     </ContentPane>
                 </ContentSection>
@@ -308,7 +308,7 @@ export default class Index extends React.Component {
                 <ContentSection>
                     <ContentPane half center-vertically>
                         <Body>
-                        <Graphic image="https://3bladesio-eegzahisvr.now.sh/static/images/hero-graphic.png"/>
+                        <Graphic image="/static/images/hero-graphic.png"/>
                         </Body>
                     </ContentPane>
                     <ContentPane half center-vertically>

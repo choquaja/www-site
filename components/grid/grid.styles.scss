@@ -82,13 +82,14 @@ img {
   }
   &-avatar {
     //display: flex;
-    $size: 120px;
+    $size: 160px;
     width: $size;
     height: $size;
     border-radius: 50%;
     background: white;
     margin-bottom: $gutter;
     box-shadow: $drop-shadow-shallow;
+    overflow: hidden;
   }
   &-details {
     &-name {

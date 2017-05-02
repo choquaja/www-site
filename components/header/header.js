@@ -2,13 +2,7 @@ import React from 'react'
 import Logo from '../logo/logo';
 import Navigation from './navigation';
 import styles from './header.styles.scss';
-
-
-
-
-
 import {color, font, unit} from '../../styles/styles.config';
-
 
 export default (props) => {
 
