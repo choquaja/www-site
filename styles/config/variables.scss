@@ -1,0 +1,46 @@
+// Colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey-light: #F0F1F1;
+$color-grey-base: #31383F;
+$color-grey-blue: #182752;
+$color-orange-light: #FAAC18;
+$color-orange-base: #F26522;
+$color-orange-dark: #F26522;
+
+$color-graphite-base: #3B3B3B;
+$color-graphite-base-2: #5E5E5E;
+$color-graphite-mid: #8C8C8C;
+
+// Size Units
+$unit: 10px;
+$gutter: $unit*2;
+$global-width: 1440px;
+
+$header-height: 88px;
+
+// Borders
+
+$border: 1px solid darken(whitesmoke, 3%);
+
+$font-headings: 'Filson Soft', sans-serif;
+$font-body: 'Fira Sans', sans-serif;
+$font-code: 'Fira Mono', monospace;
+
+// --
+// Animation / transitions
+// --
+$timing: 0.38s;
+$easing: cubic-bezier(.24, .8, 0, .97);
+$transition: $timing all $easing;
+
+$drop-shadow-transparent: 0px 0px 0px rgba($color-grey-base, 0);
+$drop-shadow: 0px 2px 8px rgba($color-grey-base, 0.4);
+$drop-shadow-xl: 0px 10px 20px rgba($color-grey-base, 0.4);
+$drop-shadow-xl-light: 0px 10px 20px rgba($color-grey-base, 0.08);
+$drop-shadow-l: 0px 6px 14px rgba($color-grey-base, 0.4);
+$drop-shadow-l-light: 0px 6px 14px rgba($color-grey-base, 0.08);
+$drop-shadow-pressed: 0px 2px 2px rgba($color-grey-base, 0.15);
+$drop-shadow-shallow: 0px 2px 4px rgba($color-grey-base, 0.08);
+
+$text-shadow-default: 0px 1px 2px rgba($color-grey-base, 0.5);
