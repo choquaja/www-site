@@ -29,13 +29,13 @@ export default () => {
                         {/*<Link href="/about">*/}
 
 
-                        <Link href="/showcase">
+                        {/* <Link href="/showcase">
                             <a>Showcase</a>
-                        </Link>
+                        </Link> */}
                         <Link href="/about" prefetch>
                             <a>About</a>
                         </Link>
-                        <a href="#">Blog</a>
+                        <a href="https://blog.3blades.io">Blog</a>
                         <a href="https://support.3blades.io/hc/en-us" target="_blank">Support</a>
 
                         <Buttons items={navButtons}/>
