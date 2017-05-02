@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/layout/layout';
 import styles from './index.styles.scss';
-import {Browser} from '/components/browser/browser';
-import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '/components/content-section/content-section';
-import Buttons from '/components/buttons/buttons';
-import {Grid, GridItem} from '/components/grid/grid';
+import {Browser} from '../components/browser/browser';
+import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '../components/content-section/content-section';
+import Buttons from '../components/buttons/buttons';
+import {Grid, GridItem} from '../components/grid/grid';
 
 const meta = {
     title: 'Let your Data Speak!',

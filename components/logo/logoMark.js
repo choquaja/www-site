@@ -1,4 +1,4 @@
-import {color, font} from '/styles/styles.config';
+import {color, font} from '../../styles/styles.config';
 import styles from './LogoMark.styles.scss';
 
 export default (props) => {

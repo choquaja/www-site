@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './navigation.styles.scss';
-import Buttons from '/components/buttons/buttons';
+import Buttons from '../buttons/buttons';
 
 const navButtons = [
     {

@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '/components/layout/layout';
-import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '/components/content-section/content-section';
+import Layout from '../../components/layout/layout';
+import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '../../components/content-section/content-section';
 
 const meta = {
     title: 'Blog',
