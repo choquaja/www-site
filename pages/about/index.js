@@ -1,9 +1,9 @@
 import React from 'react'
-import Layout from '/components/layout/layout';
+import Layout from '../../components/layout/layout';
 import styles from './about.index.styles.scss';
-import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '/components/content-section/content-section';
+import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '../../components/content-section/content-section';
 
-import {Grid, GridItem} from '/components/grid/grid';
+import {Grid, GridItem} from '../../components/grid/grid';
 
 const meta = {
     title: 'Let your Data Speak!',

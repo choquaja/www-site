@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '/components/layout/layout';
+import Layout from '../../components/layout/layout';
 import styles from './showcase.styles.scss';
-import {Grid, GridItem} from '/components/grid/grid';
-import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '/components/content-section/content-section';
+import {Grid, GridItem} from '../../components/grid/grid';
+import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '../../components/content-section/content-section';
 
 const meta = {
     title: 'Kits Showcase',

@@ -7,7 +7,7 @@ import styles from './header.styles.scss';
 
 
 
-import {color, font, unit} from '/styles/styles.config';
+import {color, font, unit} from '../../styles/styles.config';
 
 
 export default (props) => {

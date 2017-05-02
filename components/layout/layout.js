@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Header from '../header/header';
-import Footer from '/components/footer/footer';
+import Footer from '../footer/footer';
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import Typekit from 'react-typekit';
