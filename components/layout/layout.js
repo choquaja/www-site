@@ -56,9 +56,12 @@ export default class Layout extends React.Component {
             <div className="Layout">
                 <style dangerouslySetInnerHTML={{__html: styles}}/>
                 <Head>
-                    <title>{ '3Blades: ' + this.props.meta.title }</title>
                     <meta charSet='utf-8'/>
+                    <title>{ '3Blades: ' + this.props.meta.title }</title>
                     <meta name='viewport' content='initial-scale=1.0, width=device-width'/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
                     <meta itemprop="description" content={this.props.meta.description}/>
                     <link rel="stylesheet" type="text/css" href="/static/css/normalize.css"/>
                     <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css"/>

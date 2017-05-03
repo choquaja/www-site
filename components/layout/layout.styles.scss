@@ -186,6 +186,13 @@ body {
     font-size: 0.9rem;
     line-height: 0.9rem;
     @include trans;
+    .button-large & {
+      font-size: 1.5em;
+    }
+  }
+
+  &-large {
+    padding: ($unit * 2) ($gutter * 2);
   }
 
   &-med {
