@@ -1,13 +1,7 @@
 import React from 'react'
 import styles from './browser.styles.scss'
 
-
 export class Browser extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="browser">

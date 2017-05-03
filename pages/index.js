@@ -5,6 +5,7 @@ import {Browser} from '../components/browser/browser';
 import {ContentSection, ContentPane, Graphic, Title, Subtitle, Body} from '../components/content-section/content-section';
 import Buttons from '../components/buttons/buttons';
 import {Grid, GridItem} from '../components/grid/grid';
+import Console, { CodeComment, CodeInput, CodeOutput } from '../components/console/console'
 
 const meta = {
     title: 'Let your Data Speak!',
@@ -77,7 +78,23 @@ export default class Index extends React.Component {
                             <div className="hero-section-wrapper">
                                 <div className="hero-translate">
                                     <Browser>
-                                        <img src="/static/images/hero-graphic.png"/>
+                                      <Console>
+                                        <CodeComment># Login into 3blades</CodeComment>
+                                        <CodeInput>$ tbs login</CodeInput>
+                                        <CodeOutput>Username: foo</CodeOutput>
+                                        <CodeOutput>Password:</CodeOutput>
+                                        <CodeOutput>Login successful.</CodeOutput>
+                                        <div> </div>
+                                        <CodeComment># Create a new project</CodeComment>
+                                        <CodeInput>$ tbs project create MyProject</CodeInput>
+                                        <CodeOutput>Project successfully created</CodeOutput>
+                                        <div> </div>
+                                        <CodeComment># Create and launch a new server</CodeComment>
+                                        <CodeInput>$ tbs server serve MyNotebook --template tensorflow-gpu</CodeInput>
+                                        <CodeOutput>Server created.</CodeOutput>
+                                        <CodeOutput>Server started.</CodeOutput>
+                                        <CodeOutput>Endpoint: "http://go.3blades.io/server/228d193e-7212-41fe-a8b3-e31814301363/jupyter/tree"</CodeOutput>
+                                      </Console>
                                     </Browser>
                                 </div>
                             </div>

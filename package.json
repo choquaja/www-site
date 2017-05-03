@@ -11,6 +11,7 @@
   "dependencies": {
     "autoprefixer": "6.7.6",
     "babel-plugin-module-resolver": "2.5.0",
+    "babel-plugin-styled-components": "^1.1.4",
     "babel-plugin-wrap-in-js": "^1.1.0",
     "chromatic-sass": "^0.1.8",
     "glob": "7.1.1",
@@ -31,6 +32,7 @@
     "react-dom": "^15.4.2",
     "react-typekit": "^1.0.6",
     "sass-loader": "^4.1.1",
+    "styled-components": "rc",
     "styled-jsx-postcss": "^0.2.0"
   },
   "devDependencies": {

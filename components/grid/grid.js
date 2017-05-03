@@ -25,8 +25,6 @@ export class GridItem extends React.Component {
             columnWidth = 100 /  parseInt(this.props.columns);
             columnWidth = columnWidth + '%';
 
-            console.log(columnWidth);
-
             if(this.props.style){
                 gridItemStyles = this.props.style;
                 gridItemStyles.maxWidth = columnWidth;
