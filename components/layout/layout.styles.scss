@@ -247,12 +247,13 @@ body {
 }
 
 .hidden {
-  transition: $transition;
-  opacity: 0;
-  transition-duration: $timing-animation/1.5;
-  transition-delay: 0s !important;
-  animation-delay: 0s !important;
-  //transform: translateY(40px);
+  opacity: 1 !important;
+  //transition: $transition;
+  //opacity: 0;
+  //transition-duration: $timing-animation/1.5;
+  //transition-delay: 0s !important;
+  //animation-delay: 0s !important;
+  ////transform: translateY(40px);
 
   &.in-view-enter {
     //transform: none;

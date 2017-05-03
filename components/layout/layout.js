@@ -5,7 +5,6 @@ import NProgress from 'nprogress'
 import Router from 'next/router'
 import Typekit from 'react-typekit';
 
-import inView from 'in-view';
 
 import styles from './layout.styles.scss';
 
@@ -40,12 +39,6 @@ export default class Layout extends React.Component {
             console.log(this.state);
             NProgress.done();
             document.body.classList.remove('loading');
-
-            inView('.hidden').on('enter', el => {
-                el.classList.add("in-view-enter");
-                el.classList.remove("in-view-exit");
-
-            });
             document.body.classList.remove('no-scroll');
 
         };
@@ -53,10 +46,7 @@ export default class Layout extends React.Component {
     }
 
     componentDidMount() {
-        inView('.hidden').on('enter', el => {
-            el.classList.add("in-view-enter");
-            el.classList.remove("in-view-exit");
-        });
+
     }
 
 
