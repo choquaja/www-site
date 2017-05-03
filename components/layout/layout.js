@@ -41,14 +41,9 @@ export default class Layout extends React.Component {
             NProgress.done();
             document.body.classList.remove('loading');
 
-            inView.offset(20);
             inView('.hidden').on('enter', el => {
                 el.classList.add("in-view-enter");
                 el.classList.remove("in-view-exit");
-
-            }).on('exit', el => {
-                el.classList.remove("in-view-enter");
-                el.classList.add("in-view-exit");
 
             });
             document.body.classList.remove('no-scroll');
@@ -58,15 +53,9 @@ export default class Layout extends React.Component {
     }
 
     componentDidMount() {
-        inView.offset(20);
         inView('.hidden').on('enter', el => {
             el.classList.add("in-view-enter");
             el.classList.remove("in-view-exit");
-
-        }).on('exit', el => {
-            el.classList.remove("in-view-enter");
-            el.classList.add("in-view-exit");
-
         });
     }
 
@@ -77,9 +66,12 @@ export default class Layout extends React.Component {
             <div className="Layout">
                 <style dangerouslySetInnerHTML={{__html: styles}}/>
                 <Head>
-                    <title>{ '3Blades: ' + this.props.meta.title }</title>
                     <meta charSet='utf-8'/>
+                    <title>{ '3Blades: ' + this.props.meta.title }</title>
                     <meta name='viewport' content='initial-scale=1.0, width=device-width'/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="96x96" href="/static/favicon-96x96.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
                     <meta itemprop="description" content={this.props.meta.description}/>
                     <link rel="stylesheet" type="text/css" href="/static/css/normalize.css"/>
                     <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css"/>

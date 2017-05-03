@@ -13,14 +13,14 @@ const meta = {
 
 const newsletterButton = [
     {
-        label: 'Subscribe',
-        title: '',
-        icon: null,
-        target: '_self',
-        link: '#',
-        button: {
-            classes: 'button button-primary button-flat-left button-med no-movement'
-        }
+      label: 'Request Beta Access',
+      title: '',
+      icon: null,
+      target: '_blank',
+      link: 'https://www.getdrip.com/forms/1759481/submissions/new',
+      button: {
+          classes: 'button button-primary button-large'
+      }
     }
 ];
 
@@ -67,20 +67,7 @@ export default class Index extends React.Component {
                                         Build and share your data science projects with ease.
                                     </h1>
                                     <div className="newsletter">
-                                        <div className="subtitle small">
-                                            Subscribe to receive updates
-                                        </div>
-                                        <div className="form">
-                                            <div className="form-wrapper">
-                                                <input type="text" placeholder="name@domain.com"/>
-                                                <div className="form-message show-on-focus">
-                                                    We keep your information private.
-                                                </div>
-                                                <Buttons items={newsletterButton}/>
-                                            </div>
-
-                                        </div>
-
+                                        <Buttons items={newsletterButton}/>
                                     </div>
 
                                 </div>
