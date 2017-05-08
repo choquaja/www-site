@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Header from '../header/header';
 import Footer from '../footer/footer';
-// import NProgress from 'nprogress'
 // import Router from 'next/router'
 import Typekit from 'react-typekit';
 import styles from './layout.styles.scss';
@@ -50,7 +49,6 @@ export default class Layout extends React.Component {
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <meta itemprop="description" content={this.props.meta.description}/>
           <link rel="stylesheet" type="text/css" href="/static/css/normalize.css"/>
-          <link rel="stylesheet" type="text/css" href="/static/css/nprogress.css"/>
           <Typekit kitId="mqy5yqb"/>
         </Head>
         <Header {...this.props} />

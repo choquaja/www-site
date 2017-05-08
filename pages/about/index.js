@@ -59,7 +59,7 @@ export default class About extends React.Component {
 
                         <Grid columns="3" className="people">
                           {team.map(person => (
-                            <GridItem>
+                            <GridItem key={person.name}>
                               <div className="person">
                                 <div className="person-wrapper">
                                   <div className="person-avatar">

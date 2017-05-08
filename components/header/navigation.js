@@ -74,7 +74,7 @@ export default class Navigation extends React.Component {
                         </div>
                         <nav className={"navigation " + this.mobileMenuClasses()}>
                             {/* <Link href="/showcase">Showcase</Link> */}
-                            <Link href="/about" prefetch>About</Link>
+                            <Link href="/about" prefetch><a>About</a></Link>
                             <a href="https://blog.3blades.io" target="_blank">Blog</a>
                             <a href="https://docs.3blades.io/en/latest/" target="_blank">Docs</a>
                             <Buttons items={navButtons}/>
