@@ -1,33 +1,41 @@
-const {createServer} = require('http')
-const {parse} = require('url')
+const express = require('express')
 const next = require('next')
-const pathMatch = require('path-match')
 const { join } = require('path')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
 const handle = app.getRequestHandler()
-const route = pathMatch()
-const match = route('/about/:name')
+
+const redirects = require('./redirects')
+
+const rootStaticFiles = [
+  '/favicon.ico',
+  '/favicon-16x16.png',
+]
 
 app.prepare()
-    .then(() => {
-        createServer((req, res) => {
-            const {pathname} = parse(req.url)
-            const params = match(pathname)
-            const parsedUrl = parse(req.url, true)
-            const rootStaticFiles = [
-              '/favicon.ico',
-            ]
-            if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
-              const path = join(__dirname, 'static', parsedUrl.pathname)
-              app.serveStatic(req, res, path)
-            } else {
-              handle(req, res, parsedUrl)
-            }
-        })
-            .listen(3000, (err) => {
-                if (err) throw err
-                console.log('> Ready on http://localhost:3000')
-            })
+  .then(() => {
+    const server = express()
+
+    redirects.forEach(({from, to, type = 301, method = 'get'}) => {
+      server[method](from, (req, res) => {
+        res.redirect(type, to)
+      })
     })
+
+    const options = { root: join(__dirname, 'static') }
+    rootStaticFiles.forEach(file => {
+      server.get(file, (req, res) => {
+        res.sendFile(file.slice(1), options)
+      })
+    })
+
+    server.get('*', (req, res) => {
+      return handle(req, res)
+    })
+
+    server.listen(3000, err => {
+      if (err) throw err
+      console.log('> Ready on http://localhost:3000')
+    })
+  })
