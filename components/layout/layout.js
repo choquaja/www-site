@@ -1,9 +1,20 @@
 import Head from 'next/head'
 import Header from '../header/header';
 import Footer from '../footer/footer';
-// import Router from 'next/router'
+import Router from 'next/router'
 import Typekit from 'react-typekit';
 import styles from './layout.styles.scss';
+import ReactGA from 'react-ga';
+
+if (typeof window !== 'undefined') ReactGA.initialize('UA-63775134-5');
+
+const logPageView = () => {
+  if (typeof window !== 'undefined') {
+    console.log('logPageView', window.location.pathname, window.location.search);
+    ReactGA.set({ page: window.location.pathname + window.location.search });
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
+}
 
 export default class Layout extends React.Component {
   state = {
@@ -14,24 +25,11 @@ export default class Layout extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    // Router.onRouteChangeStart = (url) => {
-    //   console.log(`Loading: ${url}`);
-    //   NProgress.start();
-    //   this.setState({
-    //     loading: true
-    //   });
-    //   document.body.classList.add('loading');
-    // };
-    // Router.onRouteChangeComplete = () => {
-    //   this.setState({
-    //     loading: false
-    //   });
-    //   NProgress.done();
-    //   document.body.classList.remove('loading');
-    //   document.body.classList.remove('no-scroll');
-    // };
-    // Router.onRouteChangeError = () => NProgress.done()
+  componentDidMount() {
+    logPageView()
+    Router.onRouteChangeComplete = () => {
+      logPageView()
+    };
   }
 
   render() {
