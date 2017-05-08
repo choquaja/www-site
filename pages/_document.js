@@ -8,21 +8,21 @@ export default class MyDocument extends Document {
   //   return { html, head, styles }
   // }
 
-  render () {
-		const sheet = new ServerStyleSheet()
-		const main = sheet.collectStyles(<Main />)
-		const styleTags = sheet.getStyleElement()
+  render() {
+    const sheet = new ServerStyleSheet()
+    const main = sheet.collectStyles(<Main />)
+    const styleTags = sheet.getStyleElement()
 
     return (
-     <html>
-       <Head>
-         {styleTags}
-       </Head>
-       <body className="root">
-         {main}
-       </body>
-       <NextScript />
-     </html>
+      <html>
+        <Head>
+          {styleTags}
+        </Head>
+        <body className="root">
+          {main}
+        </body>
+        <NextScript />
+      </html>
     )
   }
 }

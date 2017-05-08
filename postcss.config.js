@@ -1,6 +1,6 @@
 module.exports = () => ({
-    plugins: {
-        'postcss-mixins' : {},
-        'postcss-cssnext': {}
-    }
+  plugins: {
+    'postcss-mixins': {},
+    'postcss-cssnext': {},
+  },
 })

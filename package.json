@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "prettier": "prettier --single-quote --trailing-comma es5 --no-semi"
   },
   "author": "Thomas Osmonson <hello@ineffable.co>",
   "dependencies": {
@@ -16,7 +17,9 @@
     "chromatic-sass": "^0.1.8",
     "express": "^4.15.2",
     "glob": "7.1.1",
+    "husky": "^0.13.3",
     "include-media": "^1.4.9",
+    "lint-staged": "^3.4.1",
     "next": "latest",
     "node-sass": "^4.4.0",
     "normalize.css": "5.0.0",
