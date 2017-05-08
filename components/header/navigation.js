@@ -5,7 +5,7 @@ import Buttons from '../buttons/buttons';
 
 const navButtons = [
     {
-        label: 'Request Beta Access',
+        label: 'Request Early Access',
         title: '',
         icon: null,
         target: '_blank',
