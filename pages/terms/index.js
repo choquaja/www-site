@@ -11,7 +11,7 @@ import {
 
 const meta = {
   title: 'Terms and Conditions',
-  description: '3blades',
+  description: '3Blades',
 }
 
 export default () => (
