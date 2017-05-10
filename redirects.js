@@ -128,7 +128,7 @@ module.exports = [
     to: 'https://blog.3blades.io/principal-component-analysis-pca-a-practical-example-68d8df12c4bf',
   },
   {
-    from: '/blog/predicting-conversion-rates-with-bayesian-statistics',
+    from: '/blog/predicting-conversion-rates-bayesian-statistics/',
     to: 'https://blog.3blades.io/predicting-conversion-rates-with-bayesian-statistics-8911b4ec9b4a',
   },
   {
