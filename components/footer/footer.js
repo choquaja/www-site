@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './footer.styles.scss'
+import Link from 'next/link'
 
 export default class Footer extends React.Component {
   constructor(props) {
@@ -31,11 +32,11 @@ export default class Footer extends React.Component {
           <div className="footer-main-section">
             <div className="footer-main-section-wrapper">
               <div className="footer-main-links">
-                <a href="#">Privacy Policy</a>
+                <Link href="/privacy" prefetch><a>Privacy Policy</a></Link>
                 {' '}
                 |
                 {' '}
-                <a href="#">Terms and Conditions</a>
+                <Link href="/terms" prefetch><a>Terms and Conditions</a></Link>
               </div>
             </div>
           </div>
