@@ -2,11 +2,9 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2c0e6e1ee79d42eb9fb1a6899a38f492)](https://www.codacy.com/app/3Blades/www-site?utm_source=github.com&utm_medium=referral&utm_content=3Blades/www-site&utm_campaign=badger)
 
-#
-
 This repo contains the source code for our public web site, located at https://3blades.io.
 
-Our blog is currently hosted by [Medium](https://blog.3blades.io).
+Our blog is currently hosted by [Medium](https://blog.3blades.io). Our docs are hosted by [Readme.io](https://readme.io).
 
 ## Stack
 ##
