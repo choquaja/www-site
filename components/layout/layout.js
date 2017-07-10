@@ -69,6 +69,7 @@ export default class Layout extends React.Component {
             type="text/css"
             href="/static/css/normalize.css"
           />
+          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3428528.js"></script>
           <Typekit kitId="mqy5yqb" />
         </Head>
         <Header {...this.props} />
