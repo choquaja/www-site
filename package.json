@@ -6,7 +6,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
+    "prettier": "prettier --single-quote --trailing-comma es5 --no-semi --write",
     "precommit": "lint-staged"
   },
   "lint-staged": {
