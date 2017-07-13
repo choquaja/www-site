@@ -1,8 +1,41 @@
 @import "styles/config";
 
-.hero {
-  @include wiggle-dark(180px, 0.1);
+.page-wrapper {
+  padding-top: 0;
+}
 
+.hero {
+  //@include wiggle-dark(180px, 0.1);
+  background: #3b3b3b url("/static/hero-bg.jpg") 60% 20% no-repeat;
+  background-size: cover !important;
+  position: relative;
+  &-wrapper {
+    position: relative;
+    z-index: 4;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-180deg, rgba(9, 30, 65, 0) 40%, #3b3b3b 100%);
+  }
+  h1 {
+    color: white;
+    text-align: center;
+    padding-top: 120px;
+  }
+  h2 {
+    text-align: center;
+  }
+  .buttons {
+    &-wrapper {
+      align-items: center;
+      justify-content: center;
+    }
+  }
   & &-wrapper {
     padding: 20px;
     display: flex;
@@ -49,17 +82,17 @@
 
   .newsletter {
     margin-top: $gutter*3;
-    @include media('<=tablet'){
-      margin-bottom:$gutter*2;
+    @include media('<=tablet') {
+      margin-bottom: $gutter*2;
     }
-    .buttons{
+    .buttons {
       //margin-left:$unit;
     }
     .subtitle {
       padding-bottom: $unit;
-      font-weight:300;
+      font-weight: 300;
       color: $color-grey-base;
-      opacity:0.35;
+      opacity: 0.35;
     }
   }
 }
@@ -91,12 +124,12 @@ img {
     }
   }
 
-  .form-message{
+  .form-message {
     position: absolute;
-    top:100%;
-    padding-top:$unit;
+    top: 100%;
+    padding-top: $unit;
     @include trans;
-    font-size:0.85rem;
+    font-size: 0.85rem;
     color: rgba($color-grey-base, 0.5)
   }
 
@@ -105,5 +138,163 @@ img {
     border: $border;
     padding: $unit;
     color: $color-grey-base;
+  }
+}
+
+.text--dark {
+  color: $color-graphite-base;
+}
+
+.flexed-items {
+  display: flex;
+  flex-wrap: wrap;
+  @include tablet {
+
+  }
+  .item {
+    flex: 1 1 25%;
+    padding: $gutter;
+    min-width: 250px;
+    &-avatar {
+      padding-top: $gutter*2;
+      padding-bottom: $gutter;
+
+      i {
+        $fzs: 30px;
+        color: $color-graphite-base;
+        font-size: $fzs;
+        line-height: $fzs;
+
+      }
+      &-wrapper {
+        $size: 80px;
+        height: $size;
+        width: $size;
+        border-radius: 50%;
+        border: 1px solid rgba(white, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        box-shadow: $drop-shadow-l-light;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-title {
+      font-size: 24px;
+      font-weight: 100;
+      font-family: $font-headings;
+      //color: $color-graphite-base;
+    }
+    &-body {
+      padding-top: $gutter;
+      p {
+        color: rgba(white, 0.75);
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+.featured-links {
+  padding: 0 !important;
+  margin: 0 !important;
+
+  .featured-link {
+    list-style: none;
+    &:not(:first-of-type) {
+      padding-top: $gutter;
+    }
+    &:not(:last-of-type) {
+      padding-bottom: $gutter;
+      border-bottom: $border;
+    }
+    &-title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.button-grid {
+  padding-top: $gutter;
+  .buttons {
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      .button {
+        flex-grow: 1;
+        width: calc(50% - 20px);
+        &:nth-of-type(3), &:nth-of-type(4) {
+          margin-top: $unit;
+        }
+        &:nth-of-type(3) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.layout-align-end {
+  .buttons-wrapper {
+    justify-content: flex-end;
+  }
+}
+
+.special-mock-content-section {
+  overflow: hidden;
+}
+
+.special-mock {
+  &-wrapper {
+    position: relative;
+  }
+  &-image {
+    @include desktop{
+      transform: scale(2) translateY(20px) translateX(80px);
+    }
+    @include tablet{
+      transform: scale(1.25) translateY(50px);
+    }
+  }
+}
+
+.special-subtitle {
+  color: $color-orange-light;
+  font-weight: 100;
+  @include handheld{
+    text-align: left;
+  }
+}
+
+.features-section {
+  .content-section-pane-half {
+    @include desktop{
+
+    }
+    &:first-of-type {
+      padding-right: $gutter;
+    }
+    &:nth-of-type(2) {
+      padding-left: $gutter;
+    }
+    @include handheld {
+      &:first-of-type {
+        padding-right: 0;
+      }
+      &:nth-of-type(2) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.content-section-pane-half {
+  & + .content-section-pane-half {
+
   }
 }

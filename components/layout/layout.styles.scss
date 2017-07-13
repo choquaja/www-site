@@ -5,8 +5,17 @@
   outline: none;
 }
 
+body.root{
+  & > div{
+    &:first-of-type{
+      width: 100%;
+    }
+  }
+}
+
 body {
   display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
   font-family: $font-body;
@@ -332,9 +341,10 @@ input:focus {
     top: 100%;
     left: 0;
     content: '';
-    height: 10px;
+    height: 6px;
     width: 61px;
-    background: url("/static/images/Group.svg");
+    background: $color-orange-light;
+    //background: url("/static/images/Group.svg");
   }
 }
 

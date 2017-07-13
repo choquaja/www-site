@@ -38,27 +38,33 @@ const team = [
     description: '',
   },
   {
-    name: 'Abhi Kethireddy',
-    headshot: 'abhikethireddy.jpg',
-    title: 'Software Engineer',
-    description: 'Optimistic and Imaginative',
+    name: 'Kevin Edmonson',
+    headshot: 'kedmonson.jpg',
+    title: 'Sales',
+    description: '',
+  },
+  {
+    name: 'Micheal Roach',
+    headshot: 'mroach.jpg',
+    title: 'DevOps Engineer',
+    description: '',
   },
   {
     name: 'John Griebel',
     headshot: 'johngriebel.jpg',
-    title: 'Senior Backend Engineer',
-    description: 'Too busy fixing things to think of a bio.',
+    title: 'Backend Engineer',
+    description: '',
   },
   {
     name: 'Eli Philpotts',
     headshot: 'eliphilpotts.png',
-    title: 'Senior Data Scientist',
+    title: 'Data Scientist',
     description: '',
   },
   {
     name: 'Ray Gesualdo',
     headshot: 'raygesualdo.jpg',
-    title: 'Senior Software Engineer',
+    title: 'Software Engineer',
     description: '',
   },
 ]
@@ -81,7 +87,7 @@ export default class About extends React.Component {
         <ContentSection gold-gradient>
           <ContentPane full center center-vertically>
             <Title>
-              The team behind 3Blades
+              The 3Blades Team
             </Title>
             <Body>
               <p>

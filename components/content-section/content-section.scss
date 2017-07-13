@@ -163,6 +163,17 @@
         padding: $unit;
       }
     }
+    //.content-section-pane-half-featured
+    &-half-featured {
+      width: 100%;
+      @include media("<=tablet") {
+        width: 100%;
+      }
+
+      @at-root & .content-section-pane-wrapper {
+        padding: $unit;
+      }
+    }
     //.content-section-pane-flex
     &-flex {
       flex: 1;
@@ -265,10 +276,10 @@
       }
     }
     &--gold-gradient {
-      background: chromatic-gradient(135deg, #F2994A, #F2C94C);
+      background: chromatic-gradient(135deg, $color-orange-light, $color-orange-dark);
       @at-root & .wiggle-after {
         &::after {
-          background: url("/static/images/wiggle-cyan.svg");
+          background: rgba(white, 0.35);
 
         }
       }
