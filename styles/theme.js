@@ -16,13 +16,41 @@ export const theme = {
   fonts: {
     headings: '"filson-soft", sans-serif',
     body: '"Fira Sans, sans-serif',
+    code: '"Fira Mono", monospace',
   },
 
   units: {
-    base: 10,
-    basetwo: 10,
+    base: '10',
+    basetwo: '10',
     gutter: '20px',
     globalWidth: '1440px',
     headerheight: '88px',
+  },
+
+  borders: {
+    border: '1px solid darken(whitesmoke, 3%)',
+  },
+
+  animations: {
+    timing: '0.38s',
+    easing: 'cubic-bezier(.24, .8, 0, .97)',
+    transition: '$timing all $easing',
+
+    dropShadowTransparent: '0px 0px 0px rgba($color-grey-base, 0)',
+    dropShadow: '0px 2px 8px rgba($color-grey-base, 0.4)',
+    dropShadowxl: '0px 10px 20px rgba($color-grey-base, 0.4)',
+    dropShadowxlLight: '0px 10px 20px rgba($color-grey-base, 0.08)',
+    dropShadowl: '0px 6px 14px rgba($color-grey-base, 0.4)',
+    dropShadowlLight: '0px 6px 14px rgba($color-grey-base, 0.08)',
+    dropShadowPressed: '0px 2px 2px rgba($color-grey-base, 0.15)',
+    dropShadowShallow: '0px 2px 4px rgba($color-grey-base, 0.08)',
+    textShadowDefault: '0px 1px 2px rgba($color-grey-base, 0.5)',
+  },
+  mobileSizes: {
+    handheld: '540px',
+    tablet: '768px',
+    desktop: '1060px',
+    midSized: '1200px',
+    largeDisplay: '1440px',
   },
 }
