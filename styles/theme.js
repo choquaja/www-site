@@ -1,3 +1,4 @@
+import { lighten, modularScale } from 'polished'
 export const theme = {
   colors: {
     white: '#ffffff',
@@ -28,7 +29,7 @@ export const theme = {
   },
 
   borders: {
-    border: '1px solid darken(whitesmoke, 3%)',
+    border: '1px solid darken(3%, whitesmoke )',
   },
 
   animations: {
