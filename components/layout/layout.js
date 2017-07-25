@@ -5,6 +5,7 @@ import Router from 'next/router'
 import Typekit from 'react-typekit'
 import styles from './layout.styles.scss'
 import ReactGA from 'react-ga'
+import { ThemeProvider } from 'styled-components'
 
 if (typeof window !== 'undefined') ReactGA.initialize('UA-63775134-5')
 
@@ -38,7 +39,9 @@ export default class Layout extends React.Component {
         <style dangerouslySetInnerHTML={{ __html: styles }} />
         <Head>
           <meta charSet="utf-8" />
-          <title>{'3Blades: ' + this.props.meta.title}</title>
+          <title>
+            {'3Blades: ' + this.props.meta.title}
+          </title>
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"
@@ -65,16 +68,22 @@ export default class Layout extends React.Component {
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
           <meta itemprop="description" content={this.props.meta.description} />
           <link
-              rel="stylesheet"
-              type="text/css"
-              href="/static/css/normalize.css"
+            rel="stylesheet"
+            type="text/css"
+            href="/static/css/normalize.css"
           />
           <link
-              rel="stylesheet"
-              type="text/css"
-              href="/static/mdi/css/materialdesignicons.css"
+            rel="stylesheet"
+            type="text/css"
+            href="/static/mdi/css/materialdesignicons.css"
           />
-          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3428528.js"></script>
+          <script
+            type="text/javascript"
+            id="hs-script-loader"
+            async
+            defer
+            src="//js.hs-scripts.com/3428528.js"
+          />
           <Typekit kitId="mqy5yqb" />
         </Head>
         <Header {...this.props} />

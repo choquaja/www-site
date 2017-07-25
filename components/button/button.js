@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { ThemeProvider } from 'styled-components'
 
 export default class Button extends React.Component {
   constructor(props) {

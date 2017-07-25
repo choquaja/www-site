@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './footer.styles.scss'
 import Link from 'next/link'
+import { ThemeProvider } from 'styled-components'
 
 export default class Footer extends React.Component {
   constructor(props) {
@@ -32,11 +33,13 @@ export default class Footer extends React.Component {
           <div className="footer-main-section">
             <div className="footer-main-section-wrapper">
               <div className="footer-main-links">
-                <Link href="/privacy" prefetch><a>Privacy Policy</a></Link>
-                {' '}
-                |
-                {' '}
-                <Link href="/terms" prefetch><a>Terms and Conditions</a></Link>
+                <Link href="/privacy" prefetch>
+                  <a>Privacy Policy</a>
+                </Link>{' '}
+                |{' '}
+                <Link href="/terms" prefetch>
+                  <a>Terms and Conditions</a>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { color, font } from '../../styles/styles.config'
 import styles from './LogoMark.styles.scss'
+import { ThemeProvider } from 'styled-components'
 
 export default props => {
   'use strict'

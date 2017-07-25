@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './browser.styles.scss'
+import { ThemeProvider } from 'styled-components'
 
 export class Browser extends React.Component {
   render() {

@@ -1,5 +1,6 @@
 // import React, { Component } from 'react'
 import styled from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
 const Code = styled.pre`
   margin: 0;

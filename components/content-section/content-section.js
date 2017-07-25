@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './content-section.scss'
+import { ThemeProvider } from 'styled-components'
 
 export class Title extends React.Component {
   constructor(props) {
@@ -60,27 +61,27 @@ export class Graphic extends React.Component {
   render() {
     let classes = ''
 
-    let graphic, label = () => ''
+    let graphic,
+      label = () => ''
 
     if (this.props.image) {
-      graphic = graphic = () => (
+      graphic = graphic = () =>
         <img className="content-section-graphic-img" src={this.props.image} />
-      )
       classes += ' content-section-graphic-image'
     }
     if (this.props.label) {
       if (this.props.link) {
-        label = label = () => (
+        label = label = () =>
           <div className="content-section-graphic-label">
-            <a href={this.props.link}>{this.props.label}</a>
+            <a href={this.props.link}>
+              {this.props.label}
+            </a>
           </div>
-        )
       } else {
-        label = label = () => (
+        label = label = () =>
           <div className="content-section-graphic-label">
             {this.props.label}
           </div>
-        )
       }
     }
 

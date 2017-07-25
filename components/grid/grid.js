@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './grid.styles.scss'
+import { ThemeProvider } from 'styled-components'
 
 export class GridItem extends React.Component {
   constructor(props) {

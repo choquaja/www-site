@@ -2,6 +2,7 @@ import Mark from './logoMark'
 import Link from 'next/link'
 import styles from './logo.styles.scss'
 import { color, font, unit } from '../../styles/styles.config'
+import { ThemeProvider } from 'styled-components'
 
 export default props => {
   'use strict'
@@ -20,9 +21,7 @@ export default props => {
         <style dangerouslySetInnerHTML={{ __html: styles }} />
         <div className="logo-wrapper">
           <Mark {...props} />
-          <div className="logo-name">
-            3Blades
-          </div>
+          <div className="logo-name">3Blades</div>
         </div>
       </a>
     </Link>

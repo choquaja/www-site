@@ -1,3 +1,6 @@
+import { keyframes } from 'styled-components'
+import { theme } from './theme'
+
 const fadeIn = () => keyframes`
 from {
   opacity: 0;
