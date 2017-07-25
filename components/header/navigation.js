@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import styles from './navigation.styles.scss'
 import Buttons from '../buttons/buttons'
-import { ThemeProvider } from 'styled-components'
 
 const navButtons = [
   {

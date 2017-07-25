@@ -134,25 +134,6 @@ $timing-animation: $timing*2.5;
 // Fadein
 //----------------------------------------------------------------------------------------------------------------------
 
-@mixin animationFadein-xl {
-  @extend .animation-fadein;
-  @extend .animation-delay-xl;
-}
-
-@mixin animationFadein-l {
-  @extend .animation-fadein;
-  @extend .animation-delay-l;
-}
-
-@mixin animationFadein-med {
-  @extend .animation-fadein;
-  @extend .animation-delay-med;
-}
-
-@mixin animationFadein-sm {
-  @extend .animation-fadein;
-  @extend .animation-delay-sm;
-}
 
 @mixin animationFadein {
   @extend .animation-fadein;

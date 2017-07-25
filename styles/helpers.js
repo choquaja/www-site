@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { theme } from './theme'
 
 const centerContent = () => css`
 margin-right:auto;
@@ -7,25 +6,25 @@ margin-left:auto;
 `
 
 const globalWrapper = () => css`
-max-width:units.globalWidth;
+max-width:${props => props.theme.units.globalWidth};
 width: 100%;
-padding-right:units.gutter;
-padding-left:units.gutter;
+padding-right:${props => props.theme.units.gutter}px;
+padding-left:${props => props.theme.units.gutter}px;
 `
 
 const ffHeading = () => css`
-  font-family:fonts.headings;
+  font-family:${props => props.theme.fonts.headings};
 `
 
 const transition = () => css`
-    transition: animations.transition;
+    transition: ${props => props.theme.animations.transition};
 `
 
 const wiggleDark = () => css`
 position: relative;
 &::before{
-  height: $height;
-  opacity:$opacity;
+  height: height;
+  opacity:opacity;
   width: 100%;
   content: '';
   position: absolute;
@@ -37,23 +36,23 @@ position: relative;
 }
 `
 
-//Responsive Formatting
-const formatHandheld = () => css`
-max-width:mobileSizes.handheld;
-`
-
-const formatHandheldUp = () => css`
-  min-width:mobileSizes.handheld +1px;
-`
-
-const formatTablet = () => css`
-  max-width: mobileSizes.desktop -1px;
-`
-
-const formatTabletUp = () => css`
-  min-width:mobileSizes.tablet 4 1px;
-`
-
-const formatDesktop = () => css`
-  min-width:mobileSizes.desktop;
-`
+// //Responsive Formatting
+// const formatHandheld = () => css`
+// max-width:mobileSizes.handheld;
+// `
+//
+// const formatHandheldUp = () => css`
+//   min-width:mobileSizes.handheld +1px;
+// `
+//
+// const formatTablet = () => css`
+//   max-width: mobileSizes.desktop -1px;
+// `
+//
+// const formatTabletUp = () => css`
+//   min-width:mobileSizes.tablet 4 1px;
+// `
+//
+// const formatDesktop = () => css`
+//   min-width:mobileSizes.desktop;
+// `

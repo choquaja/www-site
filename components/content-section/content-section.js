@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './content-section.scss'
-import { ThemeProvider } from 'styled-components'
 
 export class Title extends React.Component {
   constructor(props) {

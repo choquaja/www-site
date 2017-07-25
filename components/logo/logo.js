@@ -2,7 +2,6 @@ import Mark from './logoMark'
 import Link from 'next/link'
 import styles from './logo.styles.scss'
 import { color, font, unit } from '../../styles/styles.config'
-import { ThemeProvider } from 'styled-components'
 
 export default props => {
   'use strict'

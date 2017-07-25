@@ -1,7 +1,7 @@
 import { keyframes } from 'styled-components'
 import { theme } from './theme'
 
-const fadeIn = () => keyframes`
+const fadeIn = keyframes`
 from {
   opacity: 0;
 }
@@ -10,7 +10,7 @@ to {
 }
 `
 
-const fadeOut = () => keyframes`
+const fadeOut = keyframes`
 from {
   opacity: 1;
 }
@@ -19,22 +19,10 @@ to {
 }
 `
 
-const FadeSlideFromBottom = () => keyframes`
+const FadeSlideFromBottom = keyframes`
 from {
   opacity: 0;
-  transform: translate3d(0, units.gutter*4, 0);
-}
-
-to {
-  opacity: 1;
-  transform: none;
-}
-`
-
-const FadeSlideFromBottomSM = () => keyframes`
-from {
-  opacity: 0;
-  transform: translate3d(0, units.gutter, 0);
+  transform: translate3d(0, ${props => props.theme.units.gutter * 4}px, 0);
 }
 
 to {
@@ -43,10 +31,10 @@ to {
 }
 `
 
-const FadeSlideFromTop = () => keyframes`
+const FadeSlideFromBottomSM = keyframes`
 from {
   opacity: 0;
-  transform: translate3d(0, -units.gutter*4, 0);
+  transform: translate3d(0, ${props => props.theme.units.gutter}px, 0);
 }
 
 to {
@@ -55,10 +43,10 @@ to {
 }
 `
 
-const FadeSlideFromTopSM = () => keyframes`
+const FadeSlideFromTop = keyframes`
 from {
   opacity: 0;
-  transform: translate3d(0, -units.gutter, 0);
+  transform: translate3d(0, -${props => props.theme.units.gutter}px, 0);
 }
 
 to {
@@ -67,7 +55,19 @@ to {
 }
 `
 
-const StaggerMenu = () => keyframes`
+const FadeSlideFromTopSM = keyframes`
+from {
+  opacity: 0;
+  transform: translate3d(0, -${props => props.theme.units.gutter}px, 0);
+}
+
+to {
+  opacity: 1;
+  transform: none;
+}
+`
+
+const StaggerMenu = keyframes`
 from {
   transform: translate3d(0, 5px, 0) skew(14deg, 7deg);
   opacity: 0

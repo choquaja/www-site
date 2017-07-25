@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './footer.styles.scss'
 import Link from 'next/link'
-import { ThemeProvider } from 'styled-components'
 
 export default class Footer extends React.Component {
   constructor(props) {
@@ -26,7 +25,8 @@ export default class Footer extends React.Component {
           <div className="footer-main-section">
             <div className="footer-main-section-wrapper">
               <div className="copyright">
-                Copyright © 2015-2017 3Blades.io, Made with love in Atlanta.
+                Copyright © 2015-2017 3Blades.io, Made with love in Atlanta.We
+                shop at wholefoods.
               </div>
             </div>
           </div>

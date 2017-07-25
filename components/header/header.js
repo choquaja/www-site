@@ -3,7 +3,6 @@ import Logo from '../logo/logo'
 import Navigation from './navigation'
 import styles from './header.styles.scss'
 import { color, font, unit } from '../../styles/styles.config'
-import { ThemeProvider } from 'styled-components'
 
 export default props => {
   let classes = ''
