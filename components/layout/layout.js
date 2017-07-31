@@ -5,8 +5,9 @@ import Router from 'next/router'
 import Typekit from 'react-typekit'
 import styles from './layout.styles.scss'
 import ReactGA from 'react-ga'
-import theme from './../../styles/theme'
+import { theme } from './../../styles/theme'
 if (typeof window !== 'undefined') ReactGA.initialize('UA-63775134-5')
+import { ThemeProvider } from 'styled-components'
 
 const logPageView = () => {
   if (typeof window !== 'undefined') {

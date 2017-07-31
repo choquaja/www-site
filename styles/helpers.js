@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
 
-const centerContent = () => css`
+const centerContent = css`
 margin-right:auto;
 margin-left:auto;
 `
 
-const globalWrapper = () => css`
+export const globalWrapper = css`
+${centerContent}
 max-width:${props => props.theme.units.globalWidth};
 width: 100%;
 padding-right:${props => props.theme.units.gutter}px;
@@ -23,7 +24,7 @@ const transition = () => css`
 const wiggleDark = () => css`
 position: relative;
 &::before{
-  height: height;
+  height: height
   opacity:opacity;
   width: 100%;
   content: '';
@@ -36,23 +37,24 @@ position: relative;
 }
 `
 
-// //Responsive Formatting
-// const formatHandheld = () => css`
-// max-width:mobileSizes.handheld;
-// `
-//
-// const formatHandheldUp = () => css`
-//   min-width:mobileSizes.handheld +1px;
-// `
-//
-// const formatTablet = () => css`
-//   max-width: mobileSizes.desktop -1px;
-// `
-//
-// const formatTabletUp = () => css`
-//   min-width:mobileSizes.tablet 4 1px;
-// `
-//
-// const formatDesktop = () => css`
-//   min-width:mobileSizes.desktop;
-// `
+const sizes = {
+  handheld: '540px',
+  tablet: '768px',
+  desktop: '1060px',
+  midSized: '1200px',
+  largeDisplay: '1440px',
+}
+
+export const media = Object.keys(sizes).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+		@media (max-width: ${sizes[label]}) {
+			${css(...args)}
+		}
+	`
+  acc[label + 'Up'] = (...args) => css`
+    @media (min-width: ${sizes[label]}) {
+      ${css(...args)}
+    }
+  `
+  return acc
+}, {})

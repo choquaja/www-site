@@ -1,6 +1,38 @@
 import React from 'react'
-import styles from './footer.styles.scss'
 import Link from 'next/link'
+import { globalWrapper, media } from '../../styles/helpers'
+import styled from 'styled-components'
+import { rgba } from 'polished'
+
+const FooterMain = styled.footer`
+  background: whitesmoke;
+  border-top: ${props => props.theme.borders.border};
+  color: ${props => rgba(props.theme.colors.graphitebase, 0.5)};
+`
+
+const FooterMainWrapper = styled.div`
+  ${globalWrapper} display: flex;
+  ${media.tablet`
+  flex-direction: column;
+  .footer-main-section-wrapper{
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+`};
+`
+
+const FooterMainSection = styled.div`flex: 1;`
+
+const FooterMainSectionWrapper = styled.div`
+  display: flex;
+  padding: ${props => props.theme.units.unit * 2}px 0;
+  justify-content: ${props => props.justifyContent};
+`
+
+FooterMainSectionWrapper.defaultProps = {
+  justifyContent: '',
+}
 
 export default class Footer extends React.Component {
   constructor(props) {
@@ -19,20 +51,18 @@ export default class Footer extends React.Component {
       classes += ' ' + this.props.className
     }
     return (
-      <footer className={'footer-main ' + classes}>
-        <style dangerouslySetInnerHTML={{ __html: styles }} />
-        <div className="footer-main-wrapper" style={Styles}>
-          <div className="footer-main-section">
-            <div className="footer-main-section-wrapper">
-              <div className="copyright">
-                Copyright © 2015-2017 3Blades.io, Made with love in Atlanta.We
-                shop at wholefoods.
+      <FooterMain>
+        <FooterMainWrapper>
+          <FooterMainSection>
+            <FooterMainSectionWrapper>
+              <div>
+                Copyright © 2015-2017 3Blades.io, Made with love in Atlanta.
               </div>
-            </div>
-          </div>
-          <div className="footer-main-section">
-            <div className="footer-main-section-wrapper">
-              <div className="footer-main-links">
+            </FooterMainSectionWrapper>
+          </FooterMainSection>
+          <FooterMainSection>
+            <FooterMainSectionWrapper justifyContent="flex-end">
+              <div>
                 <Link href="/privacy" prefetch>
                   <a>Privacy Policy</a>
                 </Link>{' '}
@@ -41,10 +71,10 @@ export default class Footer extends React.Component {
                   <a>Terms and Conditions</a>
                 </Link>
               </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+            </FooterMainSectionWrapper>
+          </FooterMainSection>
+        </FooterMainWrapper>
+      </FooterMain>
     )
   }
 }

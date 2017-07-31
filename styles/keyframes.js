@@ -1,5 +1,4 @@
 import { keyframes } from 'styled-components'
-import { theme } from './theme'
 
 //Fade in
 const fadeInKeyFrame = keyframes`
@@ -13,7 +12,9 @@ to {
 
 const fadeIn = css`
 opacity: 0;
-animation: ${fadeInKeyFrame} $timing-animation forwards $easing;
+animation: ${fadeInKeyFrame} ${props =>
+  props.theme.animation.timing} forwards ${props =>
+  props.theme.animation.easing};
 `
 
 const fadeOutKeyFrames = keyframes`
@@ -28,7 +29,9 @@ to {
 //Fade Out
 const fadeOut = css`
 opacity: 1;
-animation: ${fadeOutKeyFrame} $timing-animation forwards $easing;
+animation: ${fadeOutKeyFrame} ${props =>
+  props.theme.animation.timing} forwards ${props =>
+  props.theme.animation.easing};
 `
 
 const FadeSlideFromBottomKeyFrame = keyframes`
@@ -45,7 +48,9 @@ to {
 //Fade Slide From Bottonm
 const FadeSlideFromBottom = css`
 opacity: 0;
-animation: ${FadeSlideFromBottomKeyFrame} $timing-animation forwards $easing;
+animation: ${FadeSlideFromBottomKeyFrame} ${props =>
+  props.theme.animation.timing} forwards ${props =>
+  props.theme.animation.easing};
 `
 
 const FadeSlideFromBottomSM = keyframes`
@@ -75,7 +80,9 @@ to {
 
 const FadeSlikeFromTop = css`
 opacity: 0;
-animation: ${FadeSlideFromTopKeyFrame} $timing-animation forwards $easing;
+animation: ${FadeSlideFromTopKeyFrame} ${props =>
+  props.theme.animation.timing} forwards ${props =>
+  props.theme.animation.easing};
 `
 
 //Fade Slide From Top SM
@@ -93,7 +100,9 @@ to {
 
 const FadeSlideFromTopSM = css`
 opacity: 0;
-animation: ${FadeSlideFromTopSMKeyFrame} $timing-animation forwards $easing;
+animation: ${FadeSlideFromTopSMKeyFrame} ${props =>
+  props.theme.animation.timing} forwards ${props =>
+  props.theme.animation.easing};
 `
 
 //Stagger Menu
@@ -111,5 +120,25 @@ to {
 
 const StaggerMenu = css`
 opacity: 0;
-animation: ${StaggerMenuKeyFrame} $timing-animation forwards $easing;
+animation: ${StaggerMenuKeyFrame} ${props =>
+  props.theme.animation.timing} forwards ${props =>
+  props.theme.animation.easing};
+`
+
+//Animation Delays
+
+const SmallDelay = css`
+  animation-delay: 0.25s;
+`
+
+const MediumDelay = css`
+  animation-delay: 0.5s;
+`
+
+const NormalDelay = css`
+  animation-delay: 1s;
+`
+
+const LongDelay = css`
+  animation-delay: 2s;
 `
