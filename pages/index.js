@@ -174,7 +174,7 @@ let whoUses = items => {
 export default class Index extends React.Component {
   render() {
     return (
-      <Layout meta={meta} light>
+      <Layout meta={meta}>
         <style dangerouslySetInnerHTML={{ __html: styles }} />
         <div className="hero">
           <div className="hero-wrapper">
