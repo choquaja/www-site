@@ -1,6 +1,5 @@
 import Mark from './logoMark'
 import Link from 'next/link'
-import styles from './logo.styles.scss'
 import { color, font, unit } from '../../styles/styles.config'
 import styled, { css } from 'styled-components'
 

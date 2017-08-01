@@ -1,5 +1,16 @@
 import { color, font } from '../../styles/styles.config'
 import styles from './LogoMark.styles.scss'
+import styled from 'styled-components'
+
+const LogoMark = styled.div`
+  max-width: 40px;
+  width: 40px;
+  margin-right: 12px;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+`
 
 export default props => {
   'use strict'
@@ -12,10 +23,19 @@ export default props => {
     mark = 'mark-gradient-white-dot.svg'
   }
 
+  function imageColor(props) {
+    if (props.light) {
+      return 'mark-gradient.svg'
+    } else if (props.dark) {
+      return 'mark-gradient-white-dot.svg'
+    } else {
+      return 'mark-gradient.svg'
+    }
+  }
+
   return (
-    <div className="logo-mark">
-      <style dangerouslySetInnerHTML={{ __html: styles }} />
+    <LogoMark {...props}>
       <img src={'/static/images/logo/' + mark} />
-    </div>
+    </LogoMark>
   )
 }
