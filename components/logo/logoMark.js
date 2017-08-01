@@ -1,5 +1,4 @@
 import { color, font } from '../../styles/styles.config'
-import styles from './LogoMark.styles.scss'
 import styled from 'styled-components'
 
 const LogoMark = styled.div`
