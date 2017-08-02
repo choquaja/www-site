@@ -255,7 +255,7 @@ img {
   }
   &-image {
     @include desktop{
-      transform: scale(2) translateY(20px) translateX(80px);
+      transform: scale(2) translateY(30px) translateX(80px);
     }
     @include tablet{
       transform: scale(1.25) translateY(50px);
