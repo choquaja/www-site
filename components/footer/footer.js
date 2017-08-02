@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { globalWrapper, media } from '../../styles/helpers'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-
+import FooterLinks from './footerlinks'
 const FooterMain = styled.footer`
   background: whitesmoke;
   border-top: ${props => props.theme.borders.border};
@@ -12,6 +12,8 @@ const FooterMain = styled.footer`
 
 const FooterMainWrapper = styled.div`
   ${globalWrapper} display: flex;
+  flex-direction: column;
+  align-items: center;
   ${media.tablet`
   flex-direction: column;
   .footer-main-section-wrapper{
@@ -50,6 +52,7 @@ export default class Footer extends React.Component {
               </div>
             </FooterMainSectionWrapper>
           </FooterMainSection>
+          <FooterLinks />
           <FooterMainSection>
             <FooterMainSectionWrapper justifyContent="flex-end">
               <div>
