@@ -1,5 +1,5 @@
 import { color, font } from '../../styles/styles.config'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 const LogoMark = styled.div`
   max-width: 40px;
@@ -11,30 +11,20 @@ const LogoMark = styled.div`
   }
 `
 
-export default props => {
-  'use strict'
-  let mark = 'mark-gradient.svg'
-
-  if ('light' in props) {
-    mark = 'mark-gradient.svg'
+function imageColor(props) {
+  if (props.theme.mode === 'light') {
+    return 'mark-gradient.svg'
+  } else if (props.theme.mode === 'dark') {
+    return 'mark-gradient-white-dot.svg'
+  } else {
+    return 'mark-gradient.svg'
   }
-  if ('dark' in props) {
-    mark = 'mark-gradient-white-dot.svg'
-  }
+}
 
-  function imageColor(props) {
-    if (props.light) {
-      return 'mark-gradient.svg'
-    } else if (props.dark) {
-      return 'mark-gradient-white-dot.svg'
-    } else {
-      return 'mark-gradient.svg'
-    }
-  }
-
+export default withTheme(props => {
   return (
-    <LogoMark {...props}>
-      <img src={'/static/images/logo/' + mark} />
+    <LogoMark>
+      <img src={'/static/images/logo/' + imageColor(props)} />
     </LogoMark>
   )
-}
+})

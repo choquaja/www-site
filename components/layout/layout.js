@@ -17,6 +17,11 @@ const logPageView = () => {
   }
 }
 
+const buildTheme = mode => ({
+  ...theme,
+  mode,
+})
+
 export default class Layout extends React.Component {
   state = {
     loading: false,
@@ -35,7 +40,7 @@ export default class Layout extends React.Component {
 
   render() {
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={buildTheme(this.props.light ? 'light' : 'dark')}>
         <div className="Layout">
           <style dangerouslySetInnerHTML={{ __html: styles }} />
           <Head>

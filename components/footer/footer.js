@@ -40,16 +40,6 @@ export default class Footer extends React.Component {
   }
 
   render() {
-    let classes = ''
-
-    let Styles = null
-
-    if (this.props.style) {
-      Styles = this.props.style
-    }
-    if (this.props.className) {
-      classes += ' ' + this.props.className
-    }
     return (
       <FooterMain>
         <FooterMainWrapper>

@@ -1,6 +1,5 @@
 import Mark from './logoMark'
 import Link from 'next/link'
-import { color, font, unit } from '../../styles/styles.config'
 import styled, { css } from 'styled-components'
 
 const LogoMain = styled.a`
@@ -9,10 +8,8 @@ const LogoMain = styled.a`
 `
 
 function logoNameColor(props) {
-  if (props.light) {
+  if (props.theme.mode === 'light') {
     return props.theme.colors.white
-  } else if (props.dark) {
-    return props.theme.colors.greybase
   } else {
     return props.theme.colors.greybase
   }
@@ -32,22 +29,12 @@ const LogoWrapper = styled.div`
 `
 
 export default props => {
-  'use strict'
-  let classes = ''
-
-  if ('dark' in props) {
-    classes += ' light'
-  }
-  if ('light' in props) {
-    classes += ' dark'
-  }
-
   return (
     <Link href="/" prefetch>
       <LogoMain>
         <LogoWrapper>
-          <Mark {...props} />
-          <LogoName {...props}>3Blades</LogoName>
+          <Mark />
+          <LogoName>3Blades</LogoName>
         </LogoWrapper>
       </LogoMain>
     </Link>
