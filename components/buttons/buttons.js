@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../button/button'
 import styled from 'styled-components'
 
-const buttonsWrapper = styled.div`display: flex;`
+const ButtonsWrapper = styled.div`display: flex;`
 
 export default class Buttons extends React.Component {
   constructor(props) {
@@ -17,15 +17,6 @@ export default class Buttons extends React.Component {
     }
     let classes = ''
 
-    if ('align-end' in this.props) {
-      classes += ' layout-align-end'
-    }
-    if ('align-start' in this.props) {
-      classes += ' layout-align-start'
-    }
-    if ('align-center' in this.props) {
-      classes += ' layout-align-center'
-    }
     if ('full-width' in this.props) {
       classes += ' full-width'
     }
