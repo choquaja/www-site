@@ -109,7 +109,7 @@ const ContentGraphicLabel = styled.div`
   padding-top: ${props => prop.theme.units.unit}px;
 `
 
-const ContentGraphicImage = styled.div`
+const ContentGraphicImage = styled.img`
   background: white;
   max-width: 100%;
   display: block;
@@ -254,43 +254,12 @@ export class Graphic extends React.Component {
   }
 
   render() {
-    let classes = ''
-
-    let graphic,
-      label = () => ''
-
-    if (this.props.image) {
-      graphic = graphic = () =>
-        <img className="content-section-graphic-img" src={this.props.image} />
-      classes += ' content-section-graphic-image'
-    }
-    if (this.props.label) {
-      if (this.props.link) {
-        label = label = () =>
-          <div className="content-section-graphic-label">
-            <a href={this.props.link}>
-              {this.props.label}
-            </a>
-          </div>
-      } else {
-        label = label = () =>
-          <div className="content-section-graphic-label">
-            {this.props.label}
-          </div>
-      }
-    }
-
-    if (this.props.className) {
-      classes += ' ' + this.props.className
-    }
-    return (
-      <div className={'content-section-graphic ' + classes}>
-        <div className="content-section-graphic-wrapper hidden">
-          {graphic()}
-          {label()}
-        </div>
+    ;<ContentSectionGraphic>
+      <div>
+        {graphic()}
+        {label()}
       </div>
-    )
+    </ContentSectionGraphic>
   }
 }
 
