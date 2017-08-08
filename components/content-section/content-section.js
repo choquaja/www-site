@@ -3,12 +3,16 @@ import styles from './content-section.scss'
 import styled from 'styled-components'
 import { globalWrapper, media } from '../../styles/helpers'
 
+//CONTENT SECTION
 const ContentSectionMain = styled.div`
   width: 100%;
   will-change: opacity;
   background: white;
+  ${props =>
+    props.end &&
+    '  align-items: flex-end justify-content: flex-end display: flex'};
 `
-
+//CONTENT SECTION WRAPPER
 const ContentWrapper = styled.div`
   opacity: 0;
   padding-top: $gutter*2;
@@ -22,7 +26,7 @@ const ContentWrapper = styled.div`
       padding-left: 0;
       padding-right: 0;`};
 `
-
+//CONTENT SECTION HEADER
 const ContentHeader = styled.div`
   margin-bottom: ${props => props.theme.units.gutter * 1.5} ${media.handheld`
     text-align:center;
@@ -37,26 +41,31 @@ const ContentHeader = styled.div`
     max-width: 100% !important;
   `};
 `
-
-const ContentTitleWiggleAfter = styled.div`
+//CONTENT SECTION TITLE
+const ContentTitle = styled.div`
   margin-bottom: ${props => props.theme.units.gutter * 1.5};
+  ${props => props.center && '&::after {left: calc(50% - 30.5px);'};
 `
 
 const ContentTitleWrapper = styled.div`
-  padding-bottom: $unit;
+  padding-bottom: ${props => props.theme.units.unit}px;
   font-size: 2rem;
-  font-family: $font-headings;
+  font-family: ${props => props.theme.fonts.headings};
   font-weight: 100;
   ${media.handheld`
   text-align: left;
 `};
 `
 
+//CONTENT SECTION BODY
 const ContentBodyMain = styled.div`
   width: 100%;
   ${media.handheld`
     text-align: center;
   `};
+  ${props =>
+    props.end &&
+    '  align-items: flex-end justify-content: flex-end display: flex'};
 `
 
 const ContentBodyWrapper = styled.div`
@@ -89,6 +98,7 @@ const BodySingleUL = styled.ul`
   border-radius: 8px;
 `
 
+//CONTENT SECTION GRAPHIC
 const ContentSectionGraphic = styled.div`
   margin: ${props => props.theme.units.gutter} ${globalWrapper}
     ${media.tablet`padding:0;`};
@@ -106,6 +116,7 @@ const ContentGraphicImage = styled.div`
   box-shadow: ${props => props.theme.animations.dropShadowxlLight};
 `
 
+//content section alignments
 const CenterAlignPInContentSectionBody = styled.p`
   max-width: 680px;
   ${globalWrapper};
@@ -116,6 +127,7 @@ const CenterP = styled.p`
   line-height: 36px;
 `
 
+//PANES
 const PaneMain = styled.div`
   display: flex;
   width: 100%;
@@ -191,6 +203,20 @@ const CardSimpleBody = styled.div`
   }
 `
 
+const ContentSectionPaneWrapper = styled.div`
+  ${props => props.half && 'padding: ${props => props.theme.units.unit * 2}px'};
+  ${props =>
+    props.halfFeatured && 'padding: ${props => props.theme.units.unit * 2}px'};
+  ${props => props.centerVertical && 'justify-content: center'};
+  ${props =>
+    props.end &&
+    'align-items: flex-end justify-content: flex-end display: flex'};
+  ${props => props.right && 'text-align:right justify-content:flex-end'};
+  ${props =>
+    props.center &&
+    'justify-content: center !important align-items: center !important text-align: center !important'};
+`
+
 export class Title extends React.Component {
   constructor(props) {
     super(props)
@@ -198,35 +224,15 @@ export class Title extends React.Component {
 
   render() {
     return (
-      <div
-        className={
-          'content-section-title title-l wiggle-after ' + this.props.className
-        }
-      >
-        <div className="content-section-title-wrapper hidden">
+      <ContentTitle>
+        <ContentTitleWrapper>
           {this.props.children}
-        </div>
-      </div>
+        </ContentTitleWrapper>
+      </ContentTitle>
     )
   }
 }
-export class Subtitle extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
-  render() {
-    return (
-      <div
-        className={'content-section-subtitle title-med ' + this.props.className}
-      >
-        <div className="content-section-subtitle-wrapper hidden">
-          {this.props.children}
-        </div>
-      </div>
-    )
-  }
-}
 export class Body extends React.Component {
   constructor(props) {
     super(props)
@@ -234,11 +240,11 @@ export class Body extends React.Component {
 
   render() {
     return (
-      <div className={'content-section-body ' + this.props.className}>
-        <div className="content-section-body-wrapper hidden">
+      <ContentBodyMain>
+        <ContentBodyWrapper>
           {this.props.children}
-        </div>
-      </div>
+        </ContentBodyWrapper>
+      </ContentBodyMain>
     )
   }
 }
@@ -294,58 +300,12 @@ export class ContentPane extends React.Component {
   }
 
   render() {
-    let classes = ''
-    let styles = {}
-
-    if ('text' in this.props) {
-      classes += ' content-section-pane-text'
-    }
-    if ('graphic' in this.props) {
-      classes += ' content-section-pane-graphic'
-    }
-    if ('flex' in this.props) {
-      classes += ' content-section-pane-flex'
-    }
-    if ('half' in this.props) {
-      classes += ' content-section-pane-half'
-    }
-    if ('left' in this.props) {
-      classes += ' content-section-pane-align-left'
-    }
-    if ('center' in this.props) {
-      classes += ' content-section-pane-align-center'
-    }
-    if ('center-vertically' in this.props) {
-      classes += ' content-section-pane-align-center-vertically'
-    }
-    if ('align-end' in this.props) {
-      classes += ' content-section-pane-align-end'
-    }
-    if ('align-start' in this.props) {
-      classes += ' layout-align-center'
-    }
-    if ('align-center' in this.props) {
-      classes += ' layout-align-center'
-    }
-    if ('right' in this.props) {
-      classes += ' content-section-pane-align-right'
-    }
-    if ('full' in this.props) {
-      classes += ' content-section-pane-full'
-    }
-    if (this.props.className) {
-      classes += ' ' + this.props.className
-    }
-    if (this.props.style) {
-      styles = this.props.style
-    }
-
     return (
-      <div className={'content-section-pane' + classes}>
-        <div className="content-section-pane-wrapper hidden" style={styles}>
+      <PaneMain>
+        <ContentSectionPaneWrapper>
           {this.props.children}
-        </div>
-      </div>
+        </ContentSectionPaneWrapper>
+      </PaneMain>
     )
   }
 }
