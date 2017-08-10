@@ -1,8 +1,27 @@
 import React from 'react'
 import styles from './content-section.scss'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import { globalWrapper, media } from '../../styles/helpers'
 
+const addTheme = themeType => theme => {
+  if (themeType === 'graphite') {
+    return {
+      ...theme,
+      local: themeType,
+    }
+  } else if (themeType === 'darkBlueGradient') {
+    return {
+      ...theme,
+      local: themeType,
+    }
+  } else if (themeType === 'goldGradient') {
+    return {
+      ...theme,
+      local: themeType,
+    }
+  }
+  return theme
+}
 //CONTENT SECTION
 const ContentSectionMain = styled.div`
   width: 100%;
@@ -10,13 +29,20 @@ const ContentSectionMain = styled.div`
   background: white;
   ${props =>
     props.end &&
-    '  align-items: flex-end justify-content: flex-end display: flex'};
+    'align-items: flex-end justify-content: flex-end display: flex'};
+  ${props =>
+    props.theme.local === 'darkBlueGradient' &&
+    'position:relative z-index: 8 background:chromatic-gradient(135deg, #0072A7, #47206B)'};
+  ${props =>
+    props.theme.local === 'graphite' &&
+    'background:${props=>props.theme.colors.graphitebase}'};
 `
+
 //CONTENT SECTION WRAPPER
 const ContentWrapper = styled.div`
   opacity: 0;
-  padding-top: $gutter*2;
-  padding-bottom: $gutter*2;
+  padding-top: ${props => props.theme.units.gutter * 2};
+  padding-bottom: ${props => props.theme.units.gutter * 2};
   flex-wrap: wrap;
   display: flex;
   ${globalWrapper} ${media.desktop`
@@ -44,7 +70,9 @@ const ContentHeader = styled.div`
 //CONTENT SECTION TITLE
 const ContentTitle = styled.div`
   margin-bottom: ${props => props.theme.units.gutter * 1.5};
-  ${props => props.center && '&::after {left: calc(50% - 30.5px);'};
+  ${props => props.theme.local === 'graphite' && 'color:white'};
+  ${props => props.theme.local === 'darkBlueGradient' && 'color:white'};
+  ${props => props.theme.local === 'goldGradient' && 'color:white'};
 `
 
 const ContentTitleWrapper = styled.div`
@@ -52,6 +80,7 @@ const ContentTitleWrapper = styled.div`
   font-size: 2rem;
   font-family: ${props => props.theme.fonts.headings};
   font-weight: 100;
+  text-align: center;
   ${media.handheld`
   text-align: left;
 `};
@@ -66,6 +95,9 @@ const ContentBodyMain = styled.div`
   ${props =>
     props.end &&
     '  align-items: flex-end justify-content: flex-end display: flex'};
+  ${props => props.theme.local === 'graphite' && 'color: rgba(white, 0.5);'};
+  ${props => props.theme.local === 'darkBlueGradient' && 'color: #92BBE8'};
+  ${props => props.theme.local === 'goldGradient' && 'color:white'};
 `
 
 const ContentBodyWrapper = styled.div`
@@ -106,7 +138,7 @@ const ContentSectionGraphic = styled.div`
 
 const ContentGraphicLabel = styled.div`
   ${globalWrapper} text-align: center;
-  padding-top: ${props => prop.theme.units.unit}px;
+  padding-top: ${props => props.theme.units.unit}px;
 `
 
 const ContentGraphicImage = styled.img`
@@ -181,7 +213,7 @@ const StyleGraphite = styled.div`
 
 const CardSimple = styled.div`
   position: relative;
-  margin-top: ${props => prop.theme.units.unit * 2}px;
+  margin-top: ${props => props.theme.units.unit * 2}px;
   min-width: 480px;
 `
 
@@ -216,6 +248,15 @@ const ContentSectionPaneWrapper = styled.div`
     props.center &&
     'justify-content: center !important align-items: center !important text-align: center !important'};
 `
+function ContentSection1(props) {
+  return (
+    <ThemeProvider theme={addTheme(props.themeStyle)}>
+      <ContentSectionMain>
+        {props.children}
+      </ContentSectionMain>
+    </ThemeProvider>
+  )
+}
 
 export class Title extends React.Component {
   constructor(props) {
@@ -255,10 +296,8 @@ export class Graphic extends React.Component {
 
   render() {
     ;<ContentSectionGraphic>
-      <div>
-        {graphic()}
-        {label()}
-      </div>
+      <ContentGraphicImage />
+      <ContentGraphicLabel />
     </ContentSectionGraphic>
   }
 }
@@ -285,37 +324,12 @@ export class ContentSection extends React.Component {
   }
 
   render() {
-    let classes = ''
-
-    if ('dark-blue-gradient' in this.props) {
-      classes += ' content-section-style--dark-blue-gradient'
-    }
-    if ('gold-gradient' in this.props) {
-      classes += ' content-section-style--gold-gradient'
-    }
-
-    if ('graphite' in this.props) {
-      classes += ' content-section-style--graphite'
-    }
-
-    let contentSectionStyles = null
-
-    if (this.props.style) {
-      contentSectionStyles = this.props.style
-    }
-    if (this.props.className) {
-      classes += ' ' + this.props.className
-    }
     return (
-      <section className={'content-section ' + classes}>
-        <style dangerouslySetInnerHTML={{ __html: styles }} />
-        <div
-          className="content-section-wrapper hidden"
-          style={contentSectionStyles}
-        >
+      <ContentSection1>
+        <div className="content-section-wrapper hidden">
           {this.props.children}
         </div>
-      </section>
+      </ContentSection1>
     )
   }
 }

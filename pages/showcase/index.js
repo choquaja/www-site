@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../../components/layout/layout'
-import styles from './showcase.styles.scss'
+import styled from 'styled-components'
 import { Grid, GridItem } from '../../components/grid/grid'
 import {
   ContentSection,
@@ -16,177 +16,143 @@ const meta = {
   description: '3Blades',
 }
 
+const ShowcaseGrid = styled(Grid)`
+margin-top: ${props => props.theme.units.gutter * 4};
+`
+
+const ShowcaseItem = styled.div`
+  padding: ${props => props.theme.units.gutter};
+  border-radius: 8px;
+  border: ${props => props.theme.borders.border};
+  box-shadow: ${props => props.theme.animations.dropShadowlLight};
+  margin: ${props => props.theme.units.gutter};
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-8px);
+    box-shadow: $drop-shadow-l-light;
+  }
+`
+
+const ShowcaseItemAvatar = styled.div`
+  width: 100%;
+  padding-bottom: 60%;
+  margin-bottom: ${props => props.theme.units.gutter};
+  border: ${props => props.theme.borders.border};
+  background: whitesmoke;
+`
+
+const ShowcaseItemName = styled.div`
+  font-family: ${props => props.theme.fonts.headings};
+  font-size: 1.5rem;
+  padding-bottom: ${props => props.theme.units.unit}px;
+  font-weight: 100;
+  text-align: left;
+  width: 100%;
+`
+
+const ShowcaseItemDesc = styled.div`
+  text-align: left;
+  width: 100%;
+  font-weight: 300;
+  opacity: 0.5;
+`
+
 export default class Index extends React.Component {
   render() {
     return (
       <Layout meta={meta} light>
-        <style dangerouslySetInnerHTML={{ __html: styles }} />
         <ContentSection>
           <ContentPane full center center-vertically>
-            <Title>
-              Data Science Model Showcase
-            </Title>
+            <Title>Data Science Model Showcase</Title>
             <Body>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab beatae deserunt, dignissimos
-                dolor earum hic laboriosam molestias omnis provident? Ab doloribus ea inventore officia
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab
+                beatae deserunt, dignissimos dolor earum hic laboriosam
+                molestias omnis provident? Ab doloribus ea inventore officia
                 placeat quae quidem recusandae similique.
               </p>
-              <Grid columns="4" className="showcase-grid">
+              <ShowcaseGrid columns="4">
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
 
-                    </div>
-
-                  </div>
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
 
-                    </div>
-
-                  </div>
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
 
-                    </div>
-
-                  </div>
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
 
-                    </div>
-
-                  </div>
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
 
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
 
-                    </div>
-
-                  </div>
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
 
-                    </div>
-
-                  </div>
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
 
-                    </div>
-
-                  </div>
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
                 <GridItem>
-                  <div className="showcase-item">
-                    <div className="showcase-item-wrapper">
-                      <div className="showcase-item-avatar">
-                        <div className="showcase-item-avatar-wrapper" />
-                      </div>
-                      <div className="showcase-item-details">
-                        <div className="showcase-item-details-name">
-                          Model Example
-                        </div>
-                        <div className="showcase-item-details-desc">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
+                  <ShowcaseItem>
+                    <ShowcaseItemAvatar />
+                    <ShowcaseItemName>Model Example</ShowcaseItemName>
+                    <ShowcaseItemDesc>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </ShowcaseItemDesc>
+                  </ShowcaseItem>
                 </GridItem>
-              </Grid>
+              </ShowcaseGrid>
             </Body>
           </ContentPane>
         </ContentSection>

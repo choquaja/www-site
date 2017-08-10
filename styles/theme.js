@@ -55,4 +55,6 @@ export const theme = {
     midSized: '1200px',
     largeDisplay: '1440px',
   },
+
+  local: '',
 }
