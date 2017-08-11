@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components'
+import { keyframes, css } from 'styled-components'
 
 //Fade in
 const fadeInKeyFrame = keyframes`
@@ -17,7 +17,7 @@ animation: ${fadeInKeyFrame} ${props =>
   props.theme.animation.easing};
 `
 
-const fadeOutKeyFrames = keyframes`
+const fadeOutKeyFrame = keyframes`
 from {
   opacity: 1;
 }

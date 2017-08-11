@@ -5,9 +5,9 @@
   outline: none;
 }
 
-body.root{
-  & > div{
-    &:first-of-type{
+body.root {
+  & > div {
+    &:first-of-type {
       width: 100%;
     }
   }
@@ -41,20 +41,20 @@ body {
     & div[data-reactroot] {
       display: flex;
       flex: 1;
-      flex-direction: column;
+      flex-direction: c olumn;
     }
   }
 }
 
-a{
+a {
   &:link,
   &:active,
-  &:visited{
+  &:visited {
     color: $color-orange-dark;
     text-decoration: none;
-    &:hover{
+    &:hover {
       cursor: pointer;
-      color: $color-orange-light
+      color: $color-orange-light;
     }
   }
 }
@@ -105,7 +105,7 @@ h1 {
     padding-top: $gutter;
   }
 }
-
+//////////////////////////////////////Come back to this
 @-webkit-keyframes loading {
   0% {
     left: -100vw;
@@ -127,7 +127,6 @@ body {
 .buttons {
   &-wrapper {
     display: flex;
-
   }
 
   &.full-width {
@@ -161,7 +160,6 @@ body {
   }
 
   &:not(.no-movement) {
-
     &:hover {
       transform: translateY(-2px);
     }
@@ -199,7 +197,7 @@ body {
     border-bottom-left-radius: 0;
   }
 
-  /// Button styles
+  /// Button styles//////////////////////////
   &-primary {
     background: $color-orange-light;
     .button-label {
@@ -211,15 +209,13 @@ body {
     }
     &:active {
       background: $color-orange-dark;
-
     }
   }
 
   &-secondary {
-
     //border: 1px solid $color-grey-light;
 
-    background: #FFFFFF;
+    background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
     border-radius: 5px;
@@ -231,7 +227,6 @@ body {
     .button-label {
       color: $color-orange-light;
     }
-
   }
 }
 
@@ -294,19 +289,23 @@ input:focus {
   }
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: rgba($color-grey-base, 0.25);
 }
 
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
+  /* Firefox 19+ */
   color: rgba($color-grey-base, 0.25);
 }
 
-:-ms-input-placeholder { /* IE 10+ */
+:-ms-input-placeholder {
+  /* IE 10+ */
   color: rgba($color-grey-base, 0.25);
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
+  /* Firefox 18- */
   color: rgba($color-grey-base, 0.25);
 }
 
@@ -334,8 +333,8 @@ input:focus {
 
 .cards-top-left {
   align-items: flex-end;
-  .card{
-    margin-bottom:0 !important;
+  .card {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -380,10 +379,10 @@ input:focus {
     @include media("<=1024px") {
       width: 100% !important;
       flex: 1 1 100%;
-      margin-right:0 !important;
-    &:first-of-type{
-      margin-bottom:$gutter !important;
-    }
+      margin-right: 0 !important;
+      &:first-of-type {
+        margin-bottom: $gutter !important;
+      }
     }
 
     &:nth-of-type(2) {
