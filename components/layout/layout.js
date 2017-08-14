@@ -7,19 +7,25 @@ import styles from './layout.styles.scss'
 import ReactGA from 'react-ga'
 import { theme } from './../../styles/theme'
 if (typeof window !== 'undefined') ReactGA.initialize('UA-63775134-5')
-import {
-  styled,
+import styled, {
   ThemeProvider,
   injectGlobal,
   css,
-  keyframe,
+  keyframes,
 } from 'styled-components'
-import { ffHeading, transition, centerContent } from '../../styles/helpers'
+import {
+  ffHeading,
+  transition,
+  centerContent,
+  media,
+} from '../../styles/helpers'
 import {
   FadeSlideFromTopSMKeyFrame,
   FadeSlideFromBottomSM,
   animationFadein,
 } from '../../styles/keyframes'
+import { placeholder } from 'polished'
+
 injectGlobal`
   * {
   box-sizing: border-box;
@@ -91,15 +97,15 @@ a{
 }
 `
 
-// const LoadingAnim = keyframe`
-// 0% {
-//   left: -100vw;
-// }
-//
-// 100% {
-//   left: 100vw;
-// }
-// `
+const LoadingAnim = keyframes`
+0% {
+  left: -100vw;
+}
+
+100% {
+  left: 100vw;
+}
+`
 
 const LayoutComponent = styled.div`
   width: 100%;
@@ -245,6 +251,119 @@ const showOnFocus = styled.div`
   input:focus {
     opacity: 1;
   }
+`
+
+const WebKitPlaceholder = styled.input`
+  ${placeholder({ color: 'rgba(${props=>props.theme.colors.greybase},0.25)' })};
+`
+
+const Moz19Placeholder = styled.input`
+  ${placeholder({ color: 'rgba(${props=>props.theme.colors.greybase},0.25)' })};
+`
+
+const MSInputePlaceholder = styled.input`
+  ${placeholder({ color: 'rgba(${props=>props.theme.colors.greybase},0.25)' })};
+`
+
+const Moz18Placeholder = styled.input`
+  ${placeholder({ color: 'rgba(${props=>props.theme.colors.greybase},0.25)' })};
+`
+
+const BlueSectionRight = styled.input`
+  ${media.desktop`margin-top: ${props => props.theme.units.gutter}px`};
+`
+
+const WiggleAfter = styled.div`
+  position: relative;
+  padding-bottom: ${props => props.theme.units.unit * 2}px;
+  margin-bottom: ${props => props.theme.units.unit * 2}px;
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    content: '';
+    height: 6px;
+    width: 61px;
+    background: ${props => props.theme.colors.orangelight};
+  }
+`
+
+const CardsTopLeft = styled.div`align-items: flex-end;`
+const CardsTopLeftCard = styled.div`margin-bottom: 0 !important;`
+
+const CardsHome = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 8;
+  ${media.tablet`flex-direction:column`};
+`
+
+const CardsHomeTranslate = styled.div`
+  ${media.desktop`position:relative z-index:8`};
+`
+
+const CardsHomeRight = styled.div`
+  ${media.desktop`margin-top:${props => props.theme.units.gutter * 3}px`};
+`
+
+const Card = styled.div`
+  flex: 1 1 calc(50% - 20px);
+  margin-bottom: ${props => props.theme.units.gutter};
+  background: white;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: ${props => props.theme.animations.dropShadowShallow};
+  border: ${props => props.theme.borders.border};
+  ${transition};
+  &:first-of-type {
+    margin-bottom: $gutter !important;
+  }
+  &:nth-of-type(2) {
+    margin-right: 0 !important;
+    ${media.tablet`
+    margin-bottom: 0 !important;`};
+  }
+`
+
+const CardWrapper = styled.div`padding: ${props => props.theme.units.gutter}px;`
+
+const CardHeader = styled.div`
+  padding-bottom: ${props => props.theme.units.unit * 2}px;
+`
+
+const CardText = styled.div`
+  color: ${props => props.theme.colors.graphitebase};
+  font-family: ${props => props.theme.fonts.headings};
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+`
+
+const CardBody = styled.div`
+  color: ${props => props.theme.colors.graphitemid};
+  p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+  ${media.tablet`margin-right:${props => props.theme.units.gutter}px;`};
+  ${media.desktop`
+    &:hover {
+    transform: translateY(-5px);
+    box-shadow: ${props => props.theme.animations.dropShadowlLight}`};
+`
+
+const PaddingGutter = styled.div`
+  padding: ${props => props.theme.units.gutter}px;
+`
+
+const PaddingSidesGutter = styled.div`
+  ${media.desktop`padding-left:${props =>
+    props.theme.units.gutter}px padding-right:${props =>
+    props.theme.units.gutter}px;`};
+  ${media.tablet`margin-top:${props =>
+    props.theme.units.gutter * 2}px margin-bottom:${props =>
+    props.theme.units.gutter}px;`};
 `
 
 const logPageView = () => {
