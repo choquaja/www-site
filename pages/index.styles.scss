@@ -46,7 +46,6 @@
     @include media("<=tablet") {
       flex-direction: column;
     }
-
   }
   flex: 1;
   display: flex;
@@ -79,7 +78,7 @@
       align-items: center;
     }
   }
-
+  //RESUME HERE
   .newsletter {
     margin-top: $gutter*3;
     @include media('<=tablet') {
@@ -114,7 +113,6 @@ img {
     flex: 1;
     display: flex;
     position: relative;
-
   }
   &-button {
     background: $color-orange-light;
@@ -130,7 +128,7 @@ img {
     padding-top: $unit;
     @include trans;
     font-size: 0.85rem;
-    color: rgba($color-grey-base, 0.5)
+    color: rgba($color-grey-base, 0.5);
   }
 
   input {
@@ -149,7 +147,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   @include tablet {
-
   }
   .item {
     flex: 1 1 25%;
@@ -164,7 +161,6 @@ img {
         color: $color-graphite-base;
         font-size: $fzs;
         line-height: $fzs;
-
       }
       &-wrapper {
         $size: 80px;
@@ -228,7 +224,8 @@ img {
       .button {
         flex-grow: 1;
         width: calc(50% - 20px);
-        &:nth-of-type(3), &:nth-of-type(4) {
+        &:nth-of-type(3),
+        &:nth-of-type(4) {
           margin-top: $unit;
         }
         &:nth-of-type(3) {
@@ -254,10 +251,10 @@ img {
     position: relative;
   }
   &-image {
-    @include desktop{
+    @include desktop {
       transform: scale(2) translateY(30px) translateX(80px);
     }
-    @include tablet{
+    @include tablet {
       transform: scale(1.25) translateY(50px);
     }
   }
@@ -266,15 +263,14 @@ img {
 .special-subtitle {
   color: $color-orange-light;
   font-weight: 100;
-  @include handheld{
+  @include handheld {
     text-align: left;
   }
 }
 
 .features-section {
   .content-section-pane-half {
-    @include desktop{
-
+    @include desktop {
     }
     &:first-of-type {
       padding-right: $gutter;
@@ -295,6 +291,5 @@ img {
 
 .content-section-pane-half {
   & + .content-section-pane-half {
-
   }
 }

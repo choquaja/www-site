@@ -114,7 +114,7 @@ const LayoutComponent = styled.div`
   flex-direction: column;
 `
 
-const PageComponent = styled.div`
+const PageComponent = styled.main`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -398,7 +398,7 @@ export default class Layout extends React.Component {
   render() {
     return (
       <ThemeProvider theme={buildTheme(this.props.light ? 'light' : 'dark')}>
-        <div className="Layout">
+        <LayoutComponent>
           <style dangerouslySetInnerHTML={{ __html: styles }} />
           <Head>
             <meta charSet="utf-8" />
@@ -453,13 +453,13 @@ export default class Layout extends React.Component {
             <Typekit kitId="mqy5yqb" />
           </Head>
           <Header {...this.props} />
-          <main className="page">
-            <div className="page-wrapper">
+          <PageComponent>
+            <PageWrapper>
               {this.props.children}
-            </div>
-          </main>
+            </PageWrapper>
+          </PageComponent>
           <Footer />
-        </div>
+        </LayoutComponent>
       </ThemeProvider>
     )
   }
